@@ -11,6 +11,7 @@ Storybook 是非常流行的用来构建组件文档的工具。
 那 Storybook 都提供了啥功能呢？
 
 我们试一下就知道了：
+## 1.快速使用
 
 ```
 npx create-react-app --template typescript sb-test
@@ -44,6 +45,7 @@ npm run storybook
 这就是 storybook 生成的组件文档。
 
 这三个组件不是我们自己写的，是 storybook 初始化的时候自带了三个 demo 组件。
+## 2.目录结构
 
 我们可以用它来了解下 storybook 的功能。
 
@@ -52,6 +54,7 @@ npm run storybook
 storybook init 在项目里加了 2 个目录： .storybook 和 src/stories
 
 .storybook 下的是配置文件， src/stories 下的是展示文档用的组件。
+## 3.Story
 
 Button.tsx 就是传入几个参数，渲染出一个 button：
 
@@ -91,9 +94,10 @@ export const Guang: Story = {
 
 别的地方可能叫做用例或变体，而在 Storybook 里叫做 story。
 
-一个组件包含多个 Story，一个文档里又包含多个组件，和一本书的目录差不多。
+**==一个组件包含多个 Story，一个文档里又包含多个组件==**，和一本书的目录差不多。
 
 所以把这个工具叫做 Storybook。
+## 4.组件文档
 
 除了 story 外，上面还有生成的组件文档：
 
@@ -142,7 +146,7 @@ export const Guang: Story = {
 }
 ```
 
-render 函数的参数就是 args，你可以自己返回 jsx（这时要把文件后缀名改为 tsx）。
+render 函数的参数就是 args，你可以自己返回 jsx（**==这时要把文件后缀名改为 tsx==**）。
 
 这样，渲染内容就是自己控制的：
 
@@ -231,7 +235,7 @@ export const Guang: Story = {
 感受到 Storybook 的强大了么？
 
 不只是自动生成组件文档这么简单，你可以定义不同的 Story，这些 Story 可以传入不同 props、可以请求数据、可以自定义渲染内容、还可以定义自动执行的脚本。
-
+## 5.测试脚本
 有同学会觉得，这个自动执行的 play 函数其实和测试脚本差不多。
 
 确实，play 函数是可以当作测试脚本来用的。
@@ -281,6 +285,7 @@ npx test-storybook
 ```
 ![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9d4163340d794f279b59cbf10e5996d5~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=870&h=304&s=62930&e=png&b=1a1a1a)
 
+## xx.stories.ts(x)
 xx.stories.tsx 文件里除了 Story 外，还会导出 meta 信息：
 
 ![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/45b0f117f4f94438a4bcd58318cdb7aa~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=840&h=1046&s=171277&e=png&b=1f1f1f)
@@ -323,7 +328,7 @@ paremeters 的 layout 是这个：
 ![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5a08f253de944627b1449f44245bcd24~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1152&h=1138&s=152486&e=png&b=ffffff)
 
 这些都是与 Story 无关的一些东西，所以放在 Meta 里。
-
+## 6.MDX 文档
 此外，你还可以用 Storybook 写 MDX 文档。
 
 mdx 是 markdown + jsx 的混合语法，用来写文档很不错。
@@ -343,6 +348,7 @@ mdx 是 markdown + jsx 的混合语法，用来写文档很不错。
 ![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/834f32d42ba04e0db1905fc60b072a5a~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1680&h=950&s=120565&e=png&b=ffffff)
 
 这样，当你想在组件文档里加一些别的说明文档，就可以这样加。
+## 7.自定义组件文档格式
 
 而且，组件文档的格式也是可以自定义的。
 
@@ -355,6 +361,8 @@ mdx 是 markdown + jsx 的混合语法，用来写文档很不错。
 ![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/05c92411d87446eb902068fa642b99b0~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1304&h=990&s=227974&e=png&b=1d1d1d)
 
 ![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9a07da9717084f19b783ee85405bc960~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=2140&h=1338&s=207244&e=png&b=ffffff)
+
+## 8.Calendar
 
 大概过了一遍 Storybook 的功能之后，我们把上节的 Calendar 组件拿过来试一下。
 
@@ -493,20 +501,20 @@ export const Value: Story = {
 
 案例代码上传了[小册仓库](https://github.com/QuarkGluonPlasma/react-course-code/tree/main/sb-test)。
 
-## 总结
+##  9.总结
 
-写组件文档，我们一般都是用 Storybook。
+- 写组件文档，我们一般都是用 Storybook。
 
-它把不同 props 的渲染结果叫做一个 story，一个组件有多个 story。
+- 它把不同 props 的渲染结果叫做一个 story，一个组件有多个 story。
 
-story 可以通过 args 指定传入组件的参数，通过 loaders 请求数据，通过 render 函数自定义渲染内容、通过 play 指定自动执行的脚本等。
+- story 可以通过 args 指定传入组件的参数，通过 loaders 请求数据，通过 render 函数自定义渲染内容、通过 play 指定自动执行的脚本等。
 
-而且还可以渲染完组件直接跑测试用例，就很方便。
+- 而且还可以渲染完组件直接跑测试用例，就很方便。
 
-storybook 还会自动生成组件文档，而且也可以把项目里的 mdx 文件加到文档里。
+- storybook 还会自动生成组件文档，而且也可以把项目里的 mdx 文件加到文档里。
 
-用起来也很简单，首先 npx storybook init 初始化，之后执行 npm run storybook 就可以了。
+- 用起来也很简单，首先 npx storybook init 初始化，之后执行 npm run storybook 就可以了。
 
-总之，用 storybook 可以轻松的创建组件文档，可以写多个 story，直观的看到组件不同场景下的渲染结果，还可以用来做测试。
+- 总之，用 storybook 可以轻松的创建组件文档，可以写多个 story，直观的看到组件不同场景下的渲染结果，还可以用来做测试。
 
-如果想给你的组件加上文档，storybook 基本是最好的选择。
+- 如果想给你的组件加上文档，storybook 基本是最好的选择。

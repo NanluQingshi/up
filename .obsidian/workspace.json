@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "read-books/React 通关秘籍/6-组件实战：迷你 Calendar .md",
+                "file": "read-books/04-React 通关秘籍/9-快速掌握 Storybook.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "6-组件实战：迷你 Calendar"
+              "title": "9-快速掌握 Storybook"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "read-books/React 通关秘籍/6-组件实战：迷你 Calendar .md",
+                "file": "read-books/04-React 通关秘籍/9-快速掌握 Storybook.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 6-组件实战：迷你 Calendar"
+              "title": "Outline of 9-快速掌握 Storybook"
             }
           }
         ],
@@ -168,6 +168,8 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "7347cba059b6e16a",
-  "lastOpenFiles": []
+  "active": "83db13e7bb70faf7",
+  "lastOpenFiles": [
+    "read-books/04-React 通关秘籍/8-组件实战：Calendar（下）.md"
+  ]
 }
