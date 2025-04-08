@@ -6,6 +6,7 @@
 
 ![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4dbbb19c32af43bca385ed8d51b34e08~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1162&h=1080&s=172565&e=gif&f=34&b=fefefe)
 
+## 1.dayjs
 用 cra 创建个项目：
 
 ```
@@ -64,6 +65,7 @@ console.log(dayjs('2023-11-1').endOf('month').format('YYYY-MM-DD'));
 
 ![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e8ad0a10e27143d89ec5a13e0ced7ee3~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1174&h=642&s=103374&e=png&b=ffffff)
 
+## 2.Sass
 下面正式来写 Calendar 组件。
 
 创建 src/Calendar/index.tsx
@@ -123,6 +125,7 @@ npm run start
 
 ![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0b4e84d8b2664a22a9867ca15fadfb43~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1176&h=934&s=60960&e=png&b=ffffff)
 
+## 3.MonthCalendar
 这个组件可以分为 Header 和 MonthCalendar 两个组件。
 
 我们先写下面的 MonthCalender 组件：
@@ -274,7 +277,7 @@ const allDays = getAllDays(props.value);
 
 ![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c82af0df9fd4471991f87de3d141c024~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1394&h=1034&s=67311&e=png&b=ffffff)
 
-所以创建一个 6 * 7 个元素的数组，这个月第一天之前的用第一天的日期 -1、-2、-3 这样计算出来：
+所以创建一个 6 * 7 个元素的数组，这个月第一天之前的用第一天的日期 -1、-2、-3 这样计算出来：d
 
 ```javascript
 function getAllDays(date: Dayjs) {
@@ -477,7 +480,8 @@ color: #ccc;
 
 ![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/28b2d86b3eea440dbbf6d78d9a9f2f92~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1998&h=1454&s=114493&e=png&b=fefefe)
 
-切换日期是在 Header 部分做的，接下来写下这部分：
+## 4.Header
+切换日期是在 Header 部分做的，接下来写下这部分：b
 
 ![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/85467aea224a4b33a8d8da36909fb14f~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1170&h=988&s=61605&e=png&b=ffffff)
 
@@ -560,16 +564,16 @@ export default Header;
 
 案例代码上传了[小册仓库](https://github.com/QuarkGluonPlasma/react-course-code/tree/main/calendar-component)。
 
-## 总结
+## 5.总结
 
-这节我们开始实现一个真实的 Calendar 组件。
+- 这节我们开始实现一个真实的 Calendar 组件。
 
-我们不再用 Date 获取当前月、上个月、下个月的天数和星期几，而是用 dayjs 的 api。
+- 我们不再用 Date 获取当前月、上个月、下个月的天数和星期几，而是用 dayjs 的 api。
 
-我们完成了布局部分，包括用于切换月份的 Header 和每个月的日期 MonthCalender 组件。
+- 我们完成了布局部分，包括用于切换月份的 Header 和每个月的日期 MonthCalender 组件。
 
-我们使用 sass 来管理样式。
+- 我们使用 sass 来管理样式。
 
-上面的周几、下面的日期我们都是用的 flex 布局，这样只要外层容器大小变了，内层就会跟着变。
+- 上面的周几、下面的日期我们都是用的 flex 布局，这样只要外层容器大小变了，内层就会跟着变。
 
-下节我们来实现具体的组件逻辑。
+- 下节我们来实现具体的组件逻辑。

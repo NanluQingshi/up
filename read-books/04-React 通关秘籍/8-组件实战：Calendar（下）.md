@@ -1,3 +1,4 @@
+## 1.日历参数
 基本的布局完成了，我们来添加一些参数：
 
 ![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ad04e19e36074b8193b32176742a63ed~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=986&h=708&s=175040&e=png&b=1f1f1f)
@@ -38,6 +39,7 @@ locale 是用于国际化的，比如切换到中文显示或者是英文显示�
 onChange 是当选择了日期之后会触发的回调。
 
 然后实现下这些参数对应的逻辑。
+## 2.样式参数
 
 首先是 className 和 style：
 
@@ -65,13 +67,13 @@ function Calendar(props: CalendarProps) {
 ```
 npm install classnames
 ```
-它可以传入对象或者数组，会自动合并，返回最终的 className：
+==**它可以传入对象或者数组，会自动合并，返回最终的 className：**==
 
 ![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fe280117f3fb46c39c45035446a0d2df~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=808&h=134&s=25647&e=png&b=f7f7f7)
 
 ![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/478d424e5432401eac1e3d4587656537~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=974&h=122&s=34158&e=png&b=f7f7f7)
 
-当 className 的确定需要一段复杂计算逻辑的时候，就用 classname 这个包。
+当 className 确定需要一段复杂计算逻辑的时候，就用 classname 这个包。
 
 测试下：
 
@@ -98,7 +100,7 @@ export default App;
 ![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/84aedaf1345b405cb41645358e6a64dd~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=802&h=248&s=78127&e=png&b=fcfcfc)
 
 className 和 style 的处理没问题。
-
+## 3.定制日期参数
 然后我们处理下一个 props： dateRender 和 dateInnerContent。
 
 在 MonthCalendar 里把它取出来，传入到 renderDays 方法里：
@@ -222,6 +224,7 @@ export default App;
 ![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2a768a64d2de4427913c003f47abc232~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=2416&h=1406&s=242124&e=png&b=fefefe)
 
 这样，dateRender 和 dateInnerContent 的逻辑就完成了。
+## 4.国际化参数
 
 接下来做国际化，也就是 locale 参数的处理。
 
@@ -402,6 +405,7 @@ function MonthCalendar(props: MonthCalendarProps) {
 
 新建 src/Calendar/LocaleContext.tsx
 
+
 ```javascript
 import { createContext } from "react";
 
@@ -459,6 +463,7 @@ const CalendarLocale = allLocales[localeContext.locale];
 
 ![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/56242c5291e149bea44b13d199f27374~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=840&h=190&s=25138&e=png&b=fefefe)
 
+## 5.受控参数
 接下来，我们实现 value 和 onChange 参数的逻辑。
 
 在 MonthCalendar 里取出 value 参数，传入 renderDays 方法：
@@ -641,6 +646,7 @@ export default App;
 
 ![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d20e3db58d79408b8ec2f1f50d05887f~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=2090&h=1322&s=512748&e=gif&f=44&b=fdfdfd)
 
+## 6.日期切换
 然后实现下 Header 组件里的日期切换：
 
 ![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6e27952c11d440eda8e7003daa164e28~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1424&h=948&s=215045&e=png&b=1f1f1f)
@@ -803,6 +809,7 @@ function todayHandler() {
 
 ![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3316ab7f8999417fa05e8a592c8a1a16~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=2178&h=1430&s=215113&e=gif&f=36&b=fdfdfd)
 
+## 7.Header 国际化
 最后，还要加上 Header 的国际化：
 
 ![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a4aba691c98f4fe683e72f596c13cd50~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1592&h=974&s=248124&e=png&b=1f1f1f)
@@ -843,7 +850,7 @@ function Header(props: HeaderProps) {
 没啥问题。
 
 这样，我们的 Calendar 组件就完成了。
-
+## 8.代码优化
 最后我们再来优化下代码：
 
 ![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/635e7fb2fa15465cb6a1990b0111d07d~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=968&h=924&s=159132&e=png&b=1f1f1f)
@@ -869,7 +876,7 @@ function changeDate(date: Dayjs) {
 
 案例代码上传了[小册仓库](https://github.com/QuarkGluonPlasma/react-course-code/tree/main/calendar-component)。
 
-## 总结
+## 9.总结
 
 上节我们实现了布局，这节加上了参数并且实现了这些参数对应的逻辑。
 

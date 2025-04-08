@@ -1,0 +1,183 @@
+{
+  "main": {
+    "id": "538d2b447fd6d030",
+    "type": "split",
+    "children": [
+      {
+        "id": "8e2c9b0df4fa452c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cda49284837a7bee",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "04-React 通关秘籍/8-组件实战：Calendar（下）.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "8-组件实战：Calendar（下）"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ec381130b9075f14",
+    "type": "split",
+    "children": [
+      {
+        "id": "819f949304c271db",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e8a792b87a009ad8",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "d4877206690b15c5",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "1bba79fefb7803ac",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "a72a6363c353baf2",
+    "type": "split",
+    "children": [
+      {
+        "id": "8884e9fc3f6d880d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3d58812df16bf000",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "04-React 通关秘籍/7-组件实战：Calendar（上）.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "7-组件实战：Calendar（上） 的反向链接列表"
+            }
+          },
+          {
+            "id": "f062f64960f772bc",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "04-React 通关秘籍/7-组件实战：Calendar（上）.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "7-组件实战：Calendar（上） 的出链列表"
+            }
+          },
+          {
+            "id": "a7700b5b49a3f4a1",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "98947cee319ffd73",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "04-React 通关秘籍/8-组件实战：Calendar（下）.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "8-组件实战：Calendar（下） 的大纲"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "cda49284837a7bee",
+  "lastOpenFiles": [
+    "04-React 通关秘籍/7-组件实战：Calendar（上）.md",
+    "04-React 通关秘籍/8-组件实战：Calendar（下）.md",
+    "04-React 通关秘籍/5-React 组件如何调试.md",
+    "04-React 通关秘籍/6-组件实战：迷你 Calendar .md",
+    "04-React 通关秘籍/4-React 组件如何写 TypeScript 类型.md",
+    "04-React 通关秘籍/3-Hook 的闭包陷阱的成因和解决方案.md",
+    "04-React 通关秘籍/2-一网打尽组件常用 Hook.md",
+    "04-React 通关秘籍/1-小册介绍.md"
+  ]
+}
