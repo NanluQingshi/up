@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "read-books/04-React 通关秘籍/9-快速掌握 Storybook.md",
+                "file": "read-books/01-浏览器工作原理与实践/01.Chrome架构：仅仅打开了1个页面，为什么有4个进程？.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "9-快速掌握 Storybook"
+              "title": "01.Chrome架构：仅仅打开了1个页面，为什么有4个进程？"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 461.5,
+    "collapsed": true
   },
   "right": {
     "id": "0a16629bb78b3bb0",
@@ -142,13 +143,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "read-books/04-React 通关秘籍/9-快速掌握 Storybook.md",
+                "file": "read-books/01-浏览器工作原理与实践/01.Chrome架构：仅仅打开了1个页面，为什么有4个进程？.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 9-快速掌握 Storybook"
+              "title": "Outline of 01.Chrome架构：仅仅打开了1个页面，为什么有4个进程？"
             }
           }
         ],
@@ -170,6 +171,24 @@
   },
   "active": "83db13e7bb70faf7",
   "lastOpenFiles": [
+    "read-books/01-浏览器工作原理与实践/10.10作用域链和闭包：代码中出现相同的变量，JavaScript引擎是如何选择的？.md",
+    "read-books/01-浏览器工作原理与实践/01.Chrome架构：仅仅打开了1个页面，为什么有4个进程？.md",
+    "README.md",
+    "read-books/07-Webpack5 核心原理与应用实践/1. 重新认识 Webpack：旧时代的破局者.md",
+    "read-books/前端资料整理.md",
+    "read-books/13-深入剖析NodeJS底层原理/2、Node.js_基础架构.md",
+    "read-books/13-深入剖析NodeJS底层原理/1、开篇：深入剖析_Node.js_底层原理.md",
+    "read-books/11-LangChain实战LLM应用开发指南/3、LangChain_安装与快速入门.md",
+    "read-books/11-LangChain实战LLM应用开发指南/8、LCEL：轻松构建复杂_LLM_链.md",
+    "read-books/11-LangChain实战LLM应用开发指南/7、OutputParser：如何控制输出的格式？.md",
+    "read-books/11-LangChain实战LLM应用开发指南/6、Prompt：使用_LangChain_的提示模板高效构造_prompt.md",
+    "read-books/11-LangChain实战LLM应用开发指南/5、Prompt：学好提示工程，让_AI_更懂你.md",
+    "read-books/11-LangChain实战LLM应用开发指南/4、LangChain_快速开发基于本地知识库的智能问答机器人.md",
+    "read-books/11-LangChain实战LLM应用开发指南/1、开篇词：启航之前，略叙一二.md",
+    "read-books/04-React 通关秘籍/5-React 组件如何调试.md",
+    "read-books/04-React 通关秘籍/11-深入理解 Suspense 和 ErrorBoundary.md",
+    "read-books/04-React 通关秘籍/10-React 组件如何写单测？.md",
+    "read-books/04-React 通关秘籍/9-快速掌握 Storybook.md",
     "read-books/04-React 通关秘籍/8-组件实战：Calendar（下）.md"
   ]
 }

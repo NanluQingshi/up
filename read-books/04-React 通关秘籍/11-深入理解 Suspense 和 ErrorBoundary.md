@@ -9,6 +9,7 @@ npx create-react-app --template=typescript suspense-error-boundary
 ```
 ![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c3d66372175646b5bb95047bbc928814~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1162&h=268&s=44810&e=png&b=000000)
 
+## 1.Suspense
 先来看下 Suspense 组件：
 
 Suspense 组件是和 React.lazy 结合用，用来加载一些异步组件。
