@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "read-books/01-浏览器工作原理与实践/01.Chrome架构：仅仅打开了1个页面，为什么有4个进程？.md",
+                "file": "read-books/01-浏览器工作原理与实践/04.导航流程：从输入URL到页面展示，这中间发生了什么？.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01.Chrome架构：仅仅打开了1个页面，为什么有4个进程？"
+              "title": "04.导航流程：从输入URL到页面展示，这中间发生了什么？"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 461.5,
-    "collapsed": true
+    "width": 461.5
   },
   "right": {
     "id": "0a16629bb78b3bb0",
@@ -143,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "read-books/01-浏览器工作原理与实践/01.Chrome架构：仅仅打开了1个页面，为什么有4个进程？.md",
+                "file": "read-books/01-浏览器工作原理与实践/04.导航流程：从输入URL到页面展示，这中间发生了什么？.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 01.Chrome架构：仅仅打开了1个页面，为什么有4个进程？"
+              "title": "Outline of 04.导航流程：从输入URL到页面展示，这中间发生了什么？"
             }
           }
         ],
@@ -171,8 +170,11 @@
   },
   "active": "83db13e7bb70faf7",
   "lastOpenFiles": [
-    "read-books/01-浏览器工作原理与实践/10.10作用域链和闭包：代码中出现相同的变量，JavaScript引擎是如何选择的？.md",
+    "read-books/01-浏览器工作原理与实践/03.HTTP请求流程：为什么很多站点第二次打开速度会很快？.md",
+    "read-books/01-浏览器工作原理与实践/22.22DOM树：JavaScript是如何影响DOM树构建的？.md",
     "read-books/01-浏览器工作原理与实践/01.Chrome架构：仅仅打开了1个页面，为什么有4个进程？.md",
+    "read-books/01-浏览器工作原理与实践/02.TCP协议：如何保证页面文件能被完整送达浏览器？.md",
+    "read-books/01-浏览器工作原理与实践/10.10作用域链和闭包：代码中出现相同的变量，JavaScript引擎是如何选择的？.md",
     "README.md",
     "read-books/07-Webpack5 核心原理与应用实践/1. 重新认识 Webpack：旧时代的破局者.md",
     "read-books/前端资料整理.md",
