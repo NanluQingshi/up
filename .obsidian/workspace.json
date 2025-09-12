@@ -14,11 +14,12 @@
               "type": "markdown",
               "state": {
                 "file": "read-books/01-浏览器工作原理与实践/04.导航流程：从输入URL到页面展示，这中间发生了什么？.md",
+                "file": "read-books/01-浏览器工作原理与实践/05.渲染流程（上）：HTML、CSS和JavaScript，是如何变成页面的？.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "04.导航流程：从输入URL到页面展示，这中间发生了什么？"
+              "title": "05.渲染流程（上）：HTML、CSS和JavaScript，是如何变成页面的？"
             }
           }
         ]
@@ -44,7 +45,7 @@
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
-              "title": "Files"
+              "title": "文件列表"
             }
           },
           {
@@ -53,7 +54,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "光栅化",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -61,7 +62,7 @@
                 "sortOrder": "alphabetical"
               },
               "icon": "lucide-search",
-              "title": "Search"
+              "title": "搜索"
             }
           },
           {
@@ -74,11 +75,12 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 461.5
+    "width": 448.50390243530273
   },
   "right": {
     "id": "0a16629bb78b3bb0",
@@ -143,12 +145,13 @@
               "type": "outline",
               "state": {
                 "file": "read-books/01-浏览器工作原理与实践/04.导航流程：从输入URL到页面展示，这中间发生了什么？.md",
+                "file": "read-books/01-浏览器工作原理与实践/05.渲染流程（上）：HTML、CSS和JavaScript，是如何变成页面的？.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 04.导航流程：从输入URL到页面展示，这中间发生了什么？"
+              "title": "05.渲染流程（上）：HTML、CSS和JavaScript，是如何变成页面的？ 的大纲"
             }
           }
         ],
@@ -156,41 +159,47 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 284.5
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
     }
   },
-  "active": "83db13e7bb70faf7",
+  "active": "dcdaeb969b84bb83",
   "lastOpenFiles": [
+    "read-books/01-浏览器工作原理与实践/06.渲染流程（下）：HTML、CSS和JavaScript，是如何变成页面的？.md",
+    "read-books/01-浏览器工作原理与实践/24.分层和合成机制：为什么 CSS 动画比 JavaScript 高效？.md",
+    "read-books/01-浏览器工作原理与实践/25.25页面性能：如何系统地优化页面？.md",
+    "read-books/01-浏览器工作原理与实践/23.渲染流水线：CSS 如何影响首次加载时的白屏时间？.md",
+    "read-books/01-浏览器工作原理与实践/22.DOM树：JavaScript 是如何影响 DOM 树构建的？.md",
+    "read-books/01-浏览器工作原理与实践/21.Chrome 开发者工具：利用网络面板做性能分析.md",
+    "read-books/01-浏览器工作原理与实践/20.async-await：使用同步的方式去写异步代码.md",
+    "read-books/01-浏览器工作原理与实践/19.Promise：使用 Promise，告别回调函数.md",
+    "read-books/01-浏览器工作原理与实践/18.宏任务和微任务：不是所有任务都是一个待遇.md",
+    "read-books/01-浏览器工作原理与实践/17.WebAPI：XMLHttpRequest 是怎么实现的？.md",
+    "read-books/01-浏览器工作原理与实践/16.WebAPI：setTimeout是如何实现的？.md",
+    "read-books/01-浏览器工作原理与实践/15.消息队列和事件循环：页面是怎么“活”起来的？.md",
+    "read-books/01-浏览器工作原理与实践/14.编译器和解释器：V8 是如何执行一段 JavaScript 代码的？.md",
+    "read-books/01-浏览器工作原理与实践/13.垃圾回收：垃圾数据是如何自动回收的？.md",
+    "read-books/01-浏览器工作原理与实践/12.栈空间和堆空间：数据是如何存储的？.md",
+    "read-books/01-浏览器工作原理与实践/11.this：从 JavaScript 执行上下文的视角讲清楚 this.md",
+    "read-books/01-浏览器工作原理与实践/10.作用域链和闭包：代码中出现相同的变量，JavaScript 引擎是如何选择的？.md",
+    "read-books/01-浏览器工作原理与实践/09.块级作用域：var 缺陷以及为什么要引入 let 和const？.md",
+    "read-books/01-浏览器工作原理与实践/08.调用栈：为什么 JavaScript 代码会出现栈溢出？.md",
+    "read-books/01-浏览器工作原理与实践/07.变量提升：JavaScript 代码是按顺序执行的吗？.md",
+    "read-books/01-浏览器工作原理与实践/05.渲染流程（上）：HTML、CSS和JavaScript，是如何变成页面的？.md",
+    "read-books/01-浏览器工作原理与实践/04.导航流程：从输入URL到页面展示，这中间发生了什么？.md",
+    "Pasted image 20250830160557.png",
     "read-books/01-浏览器工作原理与实践/03.HTTP请求流程：为什么很多站点第二次打开速度会很快？.md",
-    "read-books/01-浏览器工作原理与实践/22.22DOM树：JavaScript是如何影响DOM树构建的？.md",
-    "read-books/01-浏览器工作原理与实践/01.Chrome架构：仅仅打开了1个页面，为什么有4个进程？.md",
     "read-books/01-浏览器工作原理与实践/02.TCP协议：如何保证页面文件能被完整送达浏览器？.md",
-    "read-books/01-浏览器工作原理与实践/10.10作用域链和闭包：代码中出现相同的变量，JavaScript引擎是如何选择的？.md",
-    "README.md",
-    "read-books/07-Webpack5 核心原理与应用实践/1. 重新认识 Webpack：旧时代的破局者.md",
-    "read-books/前端资料整理.md",
-    "read-books/13-深入剖析NodeJS底层原理/2、Node.js_基础架构.md",
-    "read-books/13-深入剖析NodeJS底层原理/1、开篇：深入剖析_Node.js_底层原理.md",
-    "read-books/11-LangChain实战LLM应用开发指南/3、LangChain_安装与快速入门.md",
-    "read-books/11-LangChain实战LLM应用开发指南/8、LCEL：轻松构建复杂_LLM_链.md",
-    "read-books/11-LangChain实战LLM应用开发指南/7、OutputParser：如何控制输出的格式？.md",
-    "read-books/11-LangChain实战LLM应用开发指南/6、Prompt：使用_LangChain_的提示模板高效构造_prompt.md",
-    "read-books/11-LangChain实战LLM应用开发指南/5、Prompt：学好提示工程，让_AI_更懂你.md",
-    "read-books/11-LangChain实战LLM应用开发指南/4、LangChain_快速开发基于本地知识库的智能问答机器人.md",
-    "read-books/11-LangChain实战LLM应用开发指南/1、开篇词：启航之前，略叙一二.md",
-    "read-books/04-React 通关秘籍/5-React 组件如何调试.md",
-    "read-books/04-React 通关秘籍/11-深入理解 Suspense 和 ErrorBoundary.md",
-    "read-books/04-React 通关秘籍/10-React 组件如何写单测？.md",
-    "read-books/04-React 通关秘籍/9-快速掌握 Storybook.md",
-    "read-books/04-React 通关秘籍/8-组件实战：Calendar（下）.md"
+    "read-books/01-浏览器工作原理与实践/01.Chrome架构：仅仅打开了1个页面，为什么有4个进程？.md",
+    "read-books/01-浏览器工作原理与实践/1.01Chrome架构：仅仅打开了1个页面，为什么有4个进程？.md",
+    "read-books/00-PDF/2024年前端最新场景题面试攻略.pdf"
   ]
 }
