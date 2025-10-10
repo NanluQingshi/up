@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "read-books/01-浏览器工作原理与实践/25.页面性能：如何系统地优化页面？.md",
+                "file": "read-books/01-浏览器工作原理与实践/26.虚拟 DOM：虚拟 DOM 和实际的 DOM 有何不同？.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "25.页面性能：如何系统地优化页面？"
+              "title": "26.虚拟 DOM：虚拟 DOM 和实际的 DOM 有何不同？"
             }
           },
           {
@@ -154,13 +154,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "read-books/01-浏览器工作原理与实践/25.页面性能：如何系统地优化页面？.md",
+                "file": "read-books/01-浏览器工作原理与实践/26.虚拟 DOM：虚拟 DOM 和实际的 DOM 有何不同？.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 25.页面性能：如何系统地优化页面？"
+              "title": "Outline of 26.虚拟 DOM：虚拟 DOM 和实际的 DOM 有何不同？"
             }
           }
         ],
@@ -183,8 +183,9 @@
   },
   "active": "83db13e7bb70faf7",
   "lastOpenFiles": [
-    "read-books/01-浏览器工作原理与实践/11.this：从 JavaScript 执行上下文的视角讲清楚 this.md",
     "read-books/01-浏览器工作原理与实践/25.页面性能：如何系统地优化页面？.md",
+    "read-books/01-浏览器工作原理与实践/26.虚拟 DOM：虚拟 DOM 和实际的 DOM 有何不同？.md",
+    "read-books/01-浏览器工作原理与实践/11.this：从 JavaScript 执行上下文的视角讲清楚 this.md",
     "read-books/01-浏览器工作原理与实践/05.渲染流程（上）：HTML、CSS和JavaScript，是如何变成页面的？.md",
     "read-books/01-浏览器工作原理与实践/06.渲染流程（下）：HTML、CSS和JavaScript，是如何变成页面的？.md",
     "read-books/01-浏览器工作原理与实践/24.分层和合成机制：为什么 CSS 动画比 JavaScript 高效？.md",
@@ -209,7 +210,6 @@
     "read-books/01-浏览器工作原理与实践/03.HTTP请求流程：为什么很多站点第二次打开速度会很快？.md",
     "read-books/01-浏览器工作原理与实践/02.TCP协议：如何保证页面文件能被完整送达浏览器？.md",
     "read-books/01-浏览器工作原理与实践/01.Chrome架构：仅仅打开了1个页面，为什么有4个进程？.md",
-    "read-books/01-浏览器工作原理与实践/1.01Chrome架构：仅仅打开了1个页面，为什么有4个进程？.md",
     "read-books/00-PDF/2024年前端最新场景题面试攻略.pdf"
   ]
 }
