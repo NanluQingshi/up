@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "read-books/01-浏览器工作原理与实践/27.渐进式网页应用（PWA）：它究竟解决了Web应用的哪些问题？.md",
+                "file": "read-books/01-浏览器工作原理与实践/29.29HTTP1：HTTP性能优化.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "27.渐进式网页应用（PWA）：它究竟解决了Web应用的哪些问题？"
+              "title": "29.29HTTP1：HTTP性能优化"
             }
           },
           {
@@ -154,13 +154,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "read-books/01-浏览器工作原理与实践/27.渐进式网页应用（PWA）：它究竟解决了Web应用的哪些问题？.md",
+                "file": "read-books/01-浏览器工作原理与实践/29.29HTTP1：HTTP性能优化.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 27.渐进式网页应用（PWA）：它究竟解决了Web应用的哪些问题？"
+              "title": "Outline of 29.29HTTP1：HTTP性能优化"
             }
           }
         ],
@@ -183,6 +183,8 @@
   },
   "active": "83db13e7bb70faf7",
   "lastOpenFiles": [
+    "read-books/01-浏览器工作原理与实践/28.WebComponent：像搭积木一样构建 Web 应用.md",
+    "read-books/01-浏览器工作原理与实践/27.渐进式网页应用（PWA）：它究竟解决了Web应用的哪些问题？.md",
     "read-books/01-浏览器工作原理与实践/26.虚拟 DOM：虚拟 DOM 和实际的 DOM 有何不同？.md",
     "read-books/01-浏览器工作原理与实践/25.页面性能：如何系统地优化页面？.md",
     "read-books/01-浏览器工作原理与实践/11.this：从 JavaScript 执行上下文的视角讲清楚 this.md",
@@ -208,8 +210,6 @@
     "read-books/01-浏览器工作原理与实践/04.导航流程：从输入URL到页面展示，这中间发生了什么？.md",
     "Pasted image 20250830160557.png",
     "read-books/01-浏览器工作原理与实践/03.HTTP请求流程：为什么很多站点第二次打开速度会很快？.md",
-    "read-books/01-浏览器工作原理与实践/02.TCP协议：如何保证页面文件能被完整送达浏览器？.md",
-    "read-books/01-浏览器工作原理与实践/01.Chrome架构：仅仅打开了1个页面，为什么有4个进程？.md",
     "read-books/00-PDF/2024年前端最新场景题面试攻略.pdf"
   ]
 }
