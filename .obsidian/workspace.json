@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "read-books/01-浏览器工作原理与实践/29.29HTTP1：HTTP性能优化.md",
+                "file": "read-books/01-浏览器工作原理与实践/29.HTTP1：HTTP 性能优化.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "29.29HTTP1：HTTP性能优化"
+              "title": "29.HTTP1：HTTP 性能优化"
             }
           },
           {
@@ -154,13 +154,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "read-books/01-浏览器工作原理与实践/29.29HTTP1：HTTP性能优化.md",
+                "file": "read-books/01-浏览器工作原理与实践/29.HTTP1：HTTP 性能优化.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 29.29HTTP1：HTTP性能优化"
+              "title": "Outline of 29.HTTP1：HTTP 性能优化"
             }
           }
         ],
