@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "read-books/01-浏览器工作原理与实践/29.HTTP1：HTTP 性能优化.md",
+                "file": "read-books/01-浏览器工作原理与实践/30.HTTP2：如何提升网络速度？.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "29.HTTP1：HTTP 性能优化"
+              "title": "30.HTTP2：如何提升网络速度？"
             }
           },
           {
@@ -90,7 +90,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 386.5026054382324
+    "width": 386.5026054382324,
+    "collapsed": true
   },
   "right": {
     "id": "0a16629bb78b3bb0",
@@ -154,13 +155,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "read-books/01-浏览器工作原理与实践/29.HTTP1：HTTP 性能优化.md",
+                "file": "read-books/01-浏览器工作原理与实践/30.HTTP2：如何提升网络速度？.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 29.HTTP1：HTTP 性能优化"
+              "title": "Outline of 30.HTTP2：如何提升网络速度？"
             }
           }
         ],
@@ -168,7 +169,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 284.5
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -183,6 +184,8 @@
   },
   "active": "83db13e7bb70faf7",
   "lastOpenFiles": [
+    "read-books/01-浏览器工作原理与实践/29.HTTP1：HTTP 性能优化.md",
+    "read-books/01-浏览器工作原理与实践/30.HTTP2：如何提升网络速度？.md",
     "read-books/01-浏览器工作原理与实践/28.WebComponent：像搭积木一样构建 Web 应用.md",
     "read-books/01-浏览器工作原理与实践/27.渐进式网页应用（PWA）：它究竟解决了Web应用的哪些问题？.md",
     "read-books/01-浏览器工作原理与实践/26.虚拟 DOM：虚拟 DOM 和实际的 DOM 有何不同？.md",
@@ -207,9 +210,7 @@
     "read-books/01-浏览器工作原理与实践/09.块级作用域：var 缺陷以及为什么要引入 let 和const？.md",
     "read-books/01-浏览器工作原理与实践/08.调用栈：为什么 JavaScript 代码会出现栈溢出？.md",
     "read-books/01-浏览器工作原理与实践/07.变量提升：JavaScript 代码是按顺序执行的吗？.md",
-    "read-books/01-浏览器工作原理与实践/04.导航流程：从输入URL到页面展示，这中间发生了什么？.md",
     "Pasted image 20250830160557.png",
-    "read-books/01-浏览器工作原理与实践/03.HTTP请求流程：为什么很多站点第二次打开速度会很快？.md",
     "read-books/00-PDF/2024年前端最新场景题面试攻略.pdf"
   ]
 }
