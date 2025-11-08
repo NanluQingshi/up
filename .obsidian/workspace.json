@@ -13,12 +13,24 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "read-books/01-浏览器工作原理与实践/30.HTTP2：如何提升网络速度？.md",
+                "file": "read-books/01-浏览器工作原理与实践/32.同源策略：为什么 XMLHttpRequest 不能跨域请求资源？.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "30.HTTP2：如何提升网络速度？"
+              "title": "32.同源策略：为什么 XMLHttpRequest 不能跨域请求资源？"
+            }
+          },
+          {
+            "id": "099e84b6726c25af",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.9.14"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.9.14"
             }
           }
         ]
@@ -78,7 +90,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 448.50390243530273,
+    "width": 386.5026054382324,
     "collapsed": true
   },
   "right": {
@@ -143,13 +155,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "read-books/01-浏览器工作原理与实践/30.HTTP2：如何提升网络速度？.md",
+                "file": "read-books/01-浏览器工作原理与实践/32.同源策略：为什么 XMLHttpRequest 不能跨域请求资源？.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "30.HTTP2：如何提升网络速度？ 的大纲"
+              "title": "Outline of 32.同源策略：为什么 XMLHttpRequest 不能跨域请求资源？"
             }
           }
         ],
@@ -157,7 +169,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 284.5
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -171,7 +183,8 @@
   },
   "active": "83db13e7bb70faf7",
   "lastOpenFiles": [
-    "test.js",
+    "read-books/01-浏览器工作原理与实践/31.HTTP3：甩掉 TCP、TLS 的包袱，构建高效网络.md",
+    "read-books/01-浏览器工作原理与实践/30.HTTP2：如何提升网络速度？.md",
     "read-books/01-浏览器工作原理与实践/29.HTTP1：HTTP 性能优化.md",
     "read-books/01-浏览器工作原理与实践/28.WebComponent：像搭积木一样构建 Web 应用.md",
     "read-books/01-浏览器工作原理与实践/27.渐进式网页应用（PWA）：它究竟解决了Web应用的哪些问题？.md",
