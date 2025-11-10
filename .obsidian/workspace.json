@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "read-books/01-浏览器工作原理与实践/33.跨站脚本攻击（XSS）：为什么 Cookie 中有HttpOnly 属性？.md",
+                "file": "read-books/01-浏览器工作原理与实践/35.安全沙箱：页面和系统之间的隔离墙.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "33.跨站脚本攻击（XSS）：为什么 Cookie 中有HttpOnly 属性？"
+              "title": "35.安全沙箱：页面和系统之间的隔离墙"
             }
           },
           {
@@ -90,8 +90,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 386.5026054382324,
-    "collapsed": true
+    "width": 386.5026054382324
   },
   "right": {
     "id": "0a16629bb78b3bb0",
@@ -155,13 +154,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "read-books/01-浏览器工作原理与实践/33.跨站脚本攻击（XSS）：为什么 Cookie 中有HttpOnly 属性？.md",
+                "file": "read-books/01-浏览器工作原理与实践/35.安全沙箱：页面和系统之间的隔离墙.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "33.跨站脚本攻击（XSS）：为什么 Cookie 中有HttpOnly 属性？ 的大纲"
+              "title": "35.安全沙箱：页面和系统之间的隔离墙 的大纲"
             }
           }
         ],
@@ -183,7 +182,10 @@
   },
   "active": "83db13e7bb70faf7",
   "lastOpenFiles": [
+    "read-books/01-浏览器工作原理与实践/34.CSRF 攻击：陌生链接不要随便点.md",
+    "read-books/01-浏览器工作原理与实践/35.安全沙箱：页面和系统之间的隔离墙.md",
     "read-books/01-浏览器工作原理与实践/32.同源策略：为什么 XMLHttpRequest 不能跨域请求资源？.md",
+    "read-books/01-浏览器工作原理与实践/33.跨站脚本攻击（XSS）：为什么 Cookie 中有HttpOnly 属性？.md",
     "read-books/01-浏览器工作原理与实践/31.HTTP3：甩掉 TCP、TLS 的包袱，构建高效网络.md",
     "read-books/01-浏览器工作原理与实践/30.HTTP2：如何提升网络速度？.md",
     "read-books/01-浏览器工作原理与实践/29.HTTP1：HTTP 性能优化.md",
@@ -206,9 +208,6 @@
     "read-books/01-浏览器工作原理与实践/15.消息队列和事件循环：页面是怎么“活”起来的？.md",
     "read-books/01-浏览器工作原理与实践/14.编译器和解释器：V8 是如何执行一段 JavaScript 代码的？.md",
     "read-books/01-浏览器工作原理与实践/13.垃圾回收：垃圾数据是如何自动回收的？.md",
-    "read-books/01-浏览器工作原理与实践/12.栈空间和堆空间：数据是如何存储的？.md",
-    "read-books/01-浏览器工作原理与实践/11.this：从 JavaScript 执行上下文的视角讲清楚 this.md",
-    "read-books/01-浏览器工作原理与实践/10.作用域链和闭包：代码中出现相同的变量，JavaScript 引擎是如何选择的？.md",
     "Pasted image 20250830160557.png",
     "read-books/00-PDF/2024年前端最新场景题面试攻略.pdf"
   ]
