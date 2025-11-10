@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "read-books/01-浏览器工作原理与实践/32.同源策略：为什么 XMLHttpRequest 不能跨域请求资源？.md",
+                "file": "read-books/01-浏览器工作原理与实践/33.跨站脚本攻击（XSS）：为什么 Cookie 中有HttpOnly 属性？.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "32.同源策略：为什么 XMLHttpRequest 不能跨域请求资源？"
+              "title": "33.跨站脚本攻击（XSS）：为什么 Cookie 中有HttpOnly 属性？"
             }
           },
           {
@@ -155,13 +155,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "read-books/01-浏览器工作原理与实践/32.同源策略：为什么 XMLHttpRequest 不能跨域请求资源？.md",
+                "file": "read-books/01-浏览器工作原理与实践/33.跨站脚本攻击（XSS）：为什么 Cookie 中有HttpOnly 属性？.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 32.同源策略：为什么 XMLHttpRequest 不能跨域请求资源？"
+              "title": "33.跨站脚本攻击（XSS）：为什么 Cookie 中有HttpOnly 属性？ 的大纲"
             }
           }
         ],
@@ -183,6 +183,7 @@
   },
   "active": "83db13e7bb70faf7",
   "lastOpenFiles": [
+    "read-books/01-浏览器工作原理与实践/32.同源策略：为什么 XMLHttpRequest 不能跨域请求资源？.md",
     "read-books/01-浏览器工作原理与实践/31.HTTP3：甩掉 TCP、TLS 的包袱，构建高效网络.md",
     "read-books/01-浏览器工作原理与实践/30.HTTP2：如何提升网络速度？.md",
     "read-books/01-浏览器工作原理与实践/29.HTTP1：HTTP 性能优化.md",
@@ -208,8 +209,6 @@
     "read-books/01-浏览器工作原理与实践/12.栈空间和堆空间：数据是如何存储的？.md",
     "read-books/01-浏览器工作原理与实践/11.this：从 JavaScript 执行上下文的视角讲清楚 this.md",
     "read-books/01-浏览器工作原理与实践/10.作用域链和闭包：代码中出现相同的变量，JavaScript 引擎是如何选择的？.md",
-    "read-books/01-浏览器工作原理与实践/09.块级作用域：var 缺陷以及为什么要引入 let 和const？.md",
-    "read-books/01-浏览器工作原理与实践/08.调用栈：为什么 JavaScript 代码会出现栈溢出？.md",
     "Pasted image 20250830160557.png",
     "read-books/00-PDF/2024年前端最新场景题面试攻略.pdf"
   ]
