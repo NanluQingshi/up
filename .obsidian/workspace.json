@@ -11,14 +11,12 @@
             "id": "83db13e7bb70faf7",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "read-books/01-浏览器工作原理与实践/38.第二季回归这次我们来专门聊聊V8.md",
-                "mode": "source",
-                "source": false
+                "file": "read-books/00-PDF/v8.pdf"
               },
-              "icon": "lucide-file",
-              "title": "38.第二季回归这次我们来专门聊聊V8"
+              "icon": "lucide-file-text",
+              "title": "v8"
             }
           },
           {
@@ -154,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "read-books/01-浏览器工作原理与实践/38.第二季回归这次我们来专门聊聊V8.md",
+                "file": "read-books/00-PDF/v8.pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 38.第二季回归这次我们来专门聊聊V8"
+              "title": "Outline of v8"
             }
           }
         ],
@@ -183,6 +181,9 @@
   },
   "active": "83db13e7bb70faf7",
   "lastOpenFiles": [
+    "read-books/01-浏览器工作原理与实践/40.加餐一｜浏览上下文组：如何计算 Chrome 中渲染进程的个数？.md",
+    "read-books/01-浏览器工作原理与实践/39.结课测试这些浏览器的知识你都掌握了吗？.md",
+    "read-books/01-浏览器工作原理与实践/38.第二季回归这次我们来专门聊聊 V8.md",
     "read-books/01-浏览器工作原理与实践/37.结束语：大道至简.md",
     "read-books/01-浏览器工作原理与实践/36.HTTPS：让数据传输更安全.md",
     "read-books/01-浏览器工作原理与实践/32.同源策略：为什么 XMLHttpRequest 不能跨域请求资源？.md",
@@ -208,9 +209,6 @@
     "read-books/01-浏览器工作原理与实践/20.async-await：使用同步的方式去写异步代码.md",
     "read-books/01-浏览器工作原理与实践/19.Promise：使用 Promise，告别回调函数.md",
     "read-books/01-浏览器工作原理与实践/18.宏任务和微任务：不是所有任务都是一个待遇.md",
-    "read-books/01-浏览器工作原理与实践/17.WebAPI：XMLHttpRequest 是怎么实现的？.md",
-    "read-books/01-浏览器工作原理与实践/16.WebAPI：setTimeout是如何实现的？.md",
-    "read-books/01-浏览器工作原理与实践/15.消息队列和事件循环：页面是怎么“活”起来的？.md",
     "Pasted image 20250830160557.png",
     "read-books/00-PDF/2024年前端最新场景题面试攻略.pdf"
   ]
