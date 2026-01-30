@@ -37,12 +37,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "read-books/10-Electron应用开发实践指南/1、开篇：Electron_带来的边界扩展.md",
+                "file": "read-books/10-Electron应用开发实践指南/7、实战篇：需求概述.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1、开篇：Electron_带来的边界扩展"
+              "title": "7、实战篇：需求概述"
             }
           }
         ],
@@ -168,13 +168,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "read-books/10-Electron应用开发实践指南/1、开篇：Electron_带来的边界扩展.md",
+                "file": "read-books/10-Electron应用开发实践指南/7、实战篇：需求概述.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "1、开篇：Electron_带来的边界扩展 的大纲"
+              "title": "7、实战篇：需求概述 的大纲"
             }
           }
         ],
@@ -182,7 +182,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -196,6 +196,12 @@
   },
   "active": "d263d4a6d3f1c874",
   "lastOpenFiles": [
+    "read-books/10-Electron应用开发实践指南/6、基础篇：Electron_菜单和托盘.md",
+    "read-books/10-Electron应用开发实践指南/5、基础篇：Electron_跨平台兼容性措施.md",
+    "read-books/10-Electron应用开发实践指南/4、基础篇：Electron_的原生能力.md",
+    "read-books/10-Electron应用开发实践指南/3、基础篇：Electron_进程间的通信.md",
+    "read-books/10-Electron应用开发实践指南/2、基础篇：Electron_的基础概念.md",
+    "read-books/10-Electron应用开发实践指南/1、开篇：Electron_带来的边界扩展.md",
     "read-books/综合素质/毛泽东选集.pdf",
     "read-books/综合素质/金字塔原理_高清版.pdf",
     "read-books/毛泽东选集.pdf",
@@ -219,11 +225,6 @@
     "read-books/01-浏览器工作原理与实践/24.分层和合成机制：为什么 CSS 动画比 JavaScript 高效？.md",
     "read-books/01-浏览器工作原理与实践/22.DOM树：JavaScript 是如何影响 DOM 树构建的？.md",
     "read-books/01-浏览器工作原理与实践/23.渲染流水线：CSS 如何影响首次加载时的白屏时间？.md",
-    "read-books/01-浏览器工作原理与实践/05.渲染流程（上）：HTML、CSS和JavaScript，是如何变成页面的？.md",
-    "read-books/01-浏览器工作原理与实践/06.渲染流程（下）：HTML、CSS和JavaScript，是如何变成页面的？.md",
-    "read-books/01-浏览器工作原理与实践/21.Chrome 开发者工具：利用网络面板做性能分析.md",
-    "read-books/01-浏览器工作原理与实践/20.async-await：使用同步的方式去写异步代码.md",
-    "read-books/01-浏览器工作原理与实践/19.Promise：使用 Promise，告别回调函数.md",
     "Pasted image 20250830160557.png",
     "read-books/00-PDF/2024年前端最新场景题面试攻略.pdf"
   ]

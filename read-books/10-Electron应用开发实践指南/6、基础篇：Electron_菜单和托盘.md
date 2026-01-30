@@ -1,13 +1,12 @@
-## 前言
-
+# 1.前言
+---
 菜单、托盘是桌面端应用必备的功能之一，我们通常会在菜单上配置应用常用的：偏好设置、显示隐藏、打开文件等功能，在托盘内设置：退出、重启、帮助等辅助性功能，帮助用户方便快捷地控制应用的一些系统功能。系统托盘实际上也是一个菜单，通过点击鼠标触发。
 
 本小节会通过一个个使用示例对菜单和托盘进行详细介绍。
 
-
-## 应用菜单（Menu）
-
-Electron 里的菜单大体上分为三类：应用菜单、上下文菜单和 Dock 菜单（仅针对 OSX 系统）。这里以 `VSCode` 为例，来分别介绍这几种菜单的含义。打开 VSCode 编辑器，可以通过下图，很清晰地发现 3 个菜单所处的位置。
+# 2.应用菜单（Menu）
+---
+Electron 里的菜单大体上分为三类：==**应用菜单、上下文菜单和 Dock 菜单（仅针对 OSX 系统）**==。这里以 `VSCode` 为例，来分别介绍这几种菜单的含义。打开 VSCode 编辑器，可以通过下图，很清晰地发现 3 个菜单所处的位置。
 
 **MacOS**：
 
@@ -17,8 +16,7 @@ Electron 里的菜单大体上分为三类：应用菜单、上下文菜单和 D
 
 ![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8ebde811286c4a678c5001a291e3729c~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1200&h=672&s=123963&e=png&b=1c1c1c)
 
-
-### 1. 应用内菜单
+## 2.1. 应用内菜单
 
 原生应用菜单可以理解为应用窗口菜单，在 `MacOS` 上，选中应用后，应用内菜单出现在桌面的左上方。在 Windows 和 Linux 上，`Menu` 将会被设置成窗口顶部菜单。在 Electron 中，通常会使用 `Menu.setApplicationMenu(menu)` 函数来设置应用内菜单：
 
@@ -58,7 +56,7 @@ function createMenu () {
 
 <p align=center><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4774a347265c49e1861ed9aa413f33e4~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=476&h=266&s=136573&e=png&b=19032a" alt="image.png" width="50%" /></p>
 
-可以看到第一个菜单的标题是 `Electron` 而不是我们设置的标题 `菜单一`。这是因为：在 macOS 中应用程序菜单的第一个项目的标签总是你的应用程序的名字，无论你设置什么标签。如果你想展示成自己的标题，Electron 官方给了一种修改 `Info.plist` 的方法：[About Information Property List Files](https://developer.apple.com/library/ios/documentation/general/Reference/InfoPlistKeyReference/Articles/AboutInformationPropertyListFiles.html)。除此之外，你也可以重新修改一下 `template` 的格式：
+可以看到第一个菜单的标题是 `Electron` 而不是我们设置的标题 `菜单一`。这是因为：==**在 macOS 中应用程序菜单的第一个项目的标签总是你的应用程序的名字，无论你设置什么标签。**==如果你想展示成自己的标题，Electron 官方给了一种修改 `Info.plist` 的方法：[About Information Property List Files](https://developer.apple.com/library/ios/documentation/general/Reference/InfoPlistKeyReference/Articles/AboutInformationPropertyListFiles.html)。除此之外，你也可以重新修改一下 `template` 的格式：
 
 ```js
 if (process.platform === 'darwin') {
@@ -81,10 +79,9 @@ if (process.platform === 'darwin') {
 
 上述代码中，对于 `template` [菜单项](https://www.electronjs.org/zh/docs/latest/api/menu-item)字段内有很多配置项，具体的字段也可以直接阅读官方文档，针对每个字段都有详细的解释。
 
+## 2.2 上下文菜单
 
-### 2. 上下文菜单
-
-上下文菜单（context menu）就是我们通常说的右键菜单，需要注意的是：上下文菜单，需要在渲染进程中进行实现，可以通过 `IPC` 发送所需的信息到主进程，并让主进程代替渲染进程显示菜单：
+上下文菜单（context menu）就是我们通常说的右键菜单，需要注意的是：==**上下文菜单，需要在渲染进程中进行实现**==，可以通过 `IPC` 发送所需的信息到主进程，并让主进程代替渲染进程显示菜单：
 
 ```js
 // 主进程 main/index.js
@@ -122,10 +119,8 @@ electron.ipcRenderer.on("context-menu-command", (e, command) => {
 });
 ```
 
-
 <p align=center><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0a053ff5cbd846fcbb323ee8363af9cc~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1506&h=520&s=68739&e=png&b=303240" alt="image.png"  /></p>
-
-### 3. Dock 菜单（仅 MacOS 可用）
+## 2.3  Dock 菜单（仅 MacOS 可用）
 
 Dock 的菜单实现也是在主进程中，可以通过 `app.dock.setMenu` 这个 API 来直接创建：
 
@@ -158,7 +153,7 @@ const createDockMenu = () => {
 <p align=center><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5ad9b74fb0d848ff9fc5346e12bcc27a~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=404&h=632&s=188648&e=png&b=c1c1c0" alt="image.png" width="50%" /></p>
 
 
-## 应用托盘（Tray）
+# 3.应用托盘（Tray）
 
 实现应用托盘主要依托于 Electron 的 [Tray](https://www.electronjs.org/zh/docs/latest/api/tray) 模块，在 MacOS 和 Ubuntu，托盘将位于屏幕右上角上，靠近你的电池和 wifi 图标。在 Windows 上，托盘通常位于右下角。
 
@@ -188,6 +183,6 @@ tray.setContextMenu(contextMenu);
 
 在 Rubick 中，应用托盘实现的源码见：https://github.com/rubickCenter/rubick/blob/master/src/main/common/tray.ts
 
-## 总结
-
+# 4.总结
+---
 本小节我们通过一些简单的示例介绍了 Electorn 中如何通过 `Menu 模块` 和 `Tray 模块` 来实现菜单和托盘的功能。作为一款桌面端应用，菜单和托盘属于基础的功能模块，希望通过本章的学习你可以学会使用这两个最基础模块。
