@@ -37,8 +37,8 @@ AIMessage {
 
 所以这就是 OutputParser 的意义之一，langchain 封装了一系列的解析大模型 API 返回结果的工具让我们方便的使用。当然，并不限于解析大模型的输出结果，也能通过 Parser 去指定 LLM 返回的格式，让我们逐步来学习。
 
-## String Output Parser
-
+## StringOutputParser
+---
 我们接着上面的例子，如果我们只需要大模型的文本输出，就可以通过 `StringOutputParser` 获取其中的文本内容
 
 
@@ -60,8 +60,8 @@ await chain.invoke([
 通过这个简单 api，方便大家理解 output parser 的其中一个意义 -- 解析大模型的输出
 
 ## StructuredOutputParser
-
-Output Parser 的另一个意义就是引导模型以你需要的格式进行输出，部分 Parser 会内置一些预先设计好的 prompt 对模型进行引导。 听起来不太好理解，我们少废话，直接看 code 更容易理解。  
+---
+Output Parser 的另一个意义就是==**引导模型以你需要的格式进行输出**==，部分 Parser 会内置一些预先设计好的 prompt 对模型进行引导。 听起来不太好理解，我们少废话，直接看 code 更容易理解。  
 
 我们构建一个回答问题，并且会提供对应的证据和可信度评分
 
@@ -158,9 +158,7 @@ markdown codeblock: ```json {"type":"object","properties":{"answer":
 schema.org/draft-07/schema#"} ```
 ```
 
-
 通过这样一系列的 prompt，就能保证大模型以指定的格式输出，我们完成 Chain 的其他部分看看效果
-
 
 ```js
 const prompt = PromptTemplate.fromTemplate("尽可能的回答用的问题 \n{instructions} \n{question}")
@@ -185,14 +183,12 @@ console.log(res)
 }
 ```
 
-这样，我们就完成了，强制大模型按照我们需求和格式进行输出的 output parser。经过这个 demo 相信你也会理解，parser 不止是对大模型的输出进行处理，也有引导大模型按照给定格式输出的能力，并且内置了一些错误处理的能力，更容易在生产环境进行部署。
+这样，我们就完成了，强制大模型按照我们需求和格式进行输出的 output parser。经过这个 demo 相信你也会理解，**parser 不止是对大模型的输出进行处理，也有引导大模型按照给定格式输出的能力，并且内置了一些错误处理的能力，更容易在生产环境进行部署。**
 
 
-
-## List Output Parser
-
+## ListOutputParser
+---
 `StructuredOutputParser` 是比较复杂也非常强大的 parser，学习过这个后，我们学一个类似但更简单的 parser 来加深，outputParser 是如何引导和解析大模型的输出的。
-
 
 ```js
 import { CommaSeparatedListOutputParser } from "@langchain/core/output_parsers";
@@ -208,7 +204,6 @@ Your response should be a list of comma separated values, eg: `foo, bar, baz`
 ```
 
 然后我们把整条 chain 实现出来
-
 
 ```js
 const model = new ChatOpenAI();
@@ -229,9 +224,8 @@ const response = await chain.invoke({
 
 
 经历过 `StructuredOutputParser` 和 `CommaSeparatedListOutputParser`，两个具备引导性的 prompt，相信你对 output parser 理解也更加深入了。其他的 output parser 也是类似的功能，可以根据自己场景需要 LLM 输出什么样的内容进行选用。
-
-## Auto Fix Parser
-
+## AutoFixParser
+---
 让我们更进一步，把 LLM 进一步引入到 output parser 中，对于部分对输出质量要求更高的场景，如果出现了输出不符合要求的情况，我们希望的不是让 LLM 反复输出（可能每次都是错的），因为 LLM 并没有意识到自己的错误。所以我们需要把报错的信息返回给 LLM，让他理解错在哪里，应该怎么修改。  
 
 首先，我们需要使用 zod，一个用来验证 js/ts 中类型是否正确的库。先使用 zod 定义一个我们需要的类型，这里我们指定了评分需要是一个数字，并且是 [0, 100] 的数字
@@ -354,8 +348,6 @@ schema.org/draft-07/schema#"}
 
 在进一步节约成本的背景下，我们是可以用对 GPT4 的错误输出用 GPT3.5 的 fixer 来修复，甚至是用一些开源模型来进行修复，因为在这个场景下，并不需要模型具有太高的质量，通过多模型的协同来降低成本。
 
-
-
 ## 小结
-
+---
 这一节，我们由浅入深的学习了 output parser 这个工具，其不止能够很好的格式化大模型的输出也能根据我们的需求引导大模型输出我们想要的格式。

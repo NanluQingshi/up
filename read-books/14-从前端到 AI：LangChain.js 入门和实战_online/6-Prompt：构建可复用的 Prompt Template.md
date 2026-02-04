@@ -3,11 +3,13 @@
 Prompt 是大模型的核心，传统方式我们一般使用字符串拼接或者模版字符串来构造 prompt，而有了 langchain 后，我们可以构建可复用的 prompt 来让我们更工程化的管理和构建 prompt，从而制作更复杂的 chat bot
 
 ## 基础 prompt
+---
 首先我们学习基础的 `PromptTemplate` 来理解 langchain 中是如何构建和管理 prompt template。  
 
-`PromptTemplate` 是帮助我们定义一个包含变量的字符串模版，我们可以通过向该类的对象输入不同的变量值来生成模版渲染的结果。 这可以方便的让我们定义一组 prompt 模板，然后在运行时根据用户的输入动态地填充变量从而生成 prompt。
+`PromptTemplate` 是帮助我们*定义一个包含变量的字符串模版*，我们可以通过向该类的对象输入不同的变量值来生成模版渲染的结果。 这可以方便的让我们定义一组 prompt 模板，然后在运行时根据用户的输入动态地填充变量从而生成 prompt。
 
 ### 无变量 template
+
 我们先从最基础的无变量 template 来逐步上手和理解
 
 ```js
@@ -25,9 +27,7 @@ console.log(formattedGreetingPrompt);
 `PromptTemplate` 就是最基础的 template，我们不传入任何变量（`inputVariables: []`），这跟硬编码一个字符串没任何区别。 调用 prompt template 的方式就是 `format`，因为我们没有任何变量，也就没有任何参数。
 
 没有变量的 prompt template 使用的很少，这里主要以此帮助大家理解 template 的概念。
-
 ### 含变量的 template
-
 
 ```js
 const personalizedGreetingPrompt = new PromptTemplate({
@@ -94,6 +94,7 @@ console.log(formattedAutoInferTemplate)
 这样创建 prompt 的时候，会自动从字符串中推测出需要输入的变量。  
 
 ### 使用部分参数创建 template
+
 我们并不需要一次性把所有变量都输入进去，在工程中，我们可能先获得某个参数，之后才能获得另一个参数。这里类似于函数式编程的概念，我们给 需要两个参数的 prompt template 传递一个参数后，就会生成需要一个参数的 prompt template。  
 
 ```js
@@ -149,7 +150,7 @@ console.log(formattedPromptWithDate);
 // 输出: 今天是2023/7/13，我们去爬山。
 ```
 
-注意，函数 `getCurrentDateStr` 是在 `format` 被调用的时候实时运行的，也就是可以在被渲染成字符串时获取到最新的外部信息。 目前这里不支持传入参数，如果需要参数，可以用 js 的闭包进行参数的传递。  
+注意，==**函数 `getCurrentDateStr` 是在 `format` 被调用的时候实时运行的，也就是可以在被渲染成字符串时获取到最新的外部信息。**== 目前这里不支持传入参数，如果需要参数，可以用 js 的闭包进行参数的传递。  
 假设我们有一个根据时间段（morning, afternoon, evening）返回不同问候语，并且需要带上当前时间的需求
 
 ```js
@@ -190,9 +191,8 @@ console.log(formattedPrompt);
 ```
 
 得益于 js 的灵活性，我们是可以实现官方 API 不支持的玩法。  
-
-
 ## chat prompt
+---
 基础的 prompt template 算是开胃菜，因为 chat API 是目前跟 llm 交互的主流形式，`ChatPromptTemplate` 是最常用的工具。
 
 在跟各种聊天模型交互的时候，在构建聊天信息时，不仅仅包含了像上文中的文本内容，也需要与每条消息关联的角色信息。 例如这条信息是由 人类、AI、还是给 chatbot 指定的 system 信息，这种结构化的消息输入有助于模型更好地理解对话的上下文和流程，从而生成更准确、更自然的回应。  
@@ -317,10 +317,10 @@ await chain.invoke({
 ```
 
 ## 组合多个 Prompt
-
+---
 在实际工程中，我们可能会根据多个变量，根据多个外界环境去构造一个很复杂的 prompt，这里就是`PipelinePromptTemplate` 的应用场景。 我可以用将多个独立的 template 构建成一个完整且复杂的 prompt，这样可以提高独立 prompt 的复用性，进一步增强模块化带来的优势。  
 
-在 `PipelinePromptTemplate` 有两个核心的概念：
+在 `PipelinePromptTemplate` 有==**两个核心的概念**==：
 - `pipelinePrompts`，一组 object，每个 object 表示 `prompt` 运行后赋值给 `name` 变量 
 - `finalPrompt`，表示最终输出的 prompt  
 
@@ -399,6 +399,7 @@ console.log(formattedPrompt)
 
 
 ## 小结
+---
 prompt 是 llm app 最核心的价值，并且会经常修改。所以通过我们本节课介绍的各种 prompt template，我们可以更灵活的使用、管理和组装多种 prompt template！打造出最合适当前场景和对话的 prompt，从而更好地激发 llm 的能力。
 
 
