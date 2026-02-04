@@ -29,7 +29,7 @@ Jupyter Notebook 的核心是代码块，每个代码块作为一个整体去执
 
 ![CleanShot 2024-03-18 at 21.57.45@2x.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/090c646b45dc4562b11b24002b7cf219~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=2500\&h=520\&s=119190\&e=png\&b=f9f9f9)
 
-在 Jupyter NoteBook 中，如果一个代码快只有一个变量，那就会自动把该变量显示出来，类似于 `console.log(单个变量)` 但又不一样，其中有些微妙的区别在使用中你会感受出来。
+在 Jupyter NoteBook 中，如果一个代码块只有一个变量，那就会自动把该变量显示出来，类似于 `console.log(单个变量)` 但又不一样，其中有些微妙的区别在使用中你会感受出来。
 
 所以，当运行完两个代码块之后，在 js 的环境中有了 text 这个变量。我们可以把这里的从 txt 文件读内容理解成一个耗时又耗钱的任务（就像 OpenAI API 一样），在运行完这个任务后，就会把结果储存在 text 中，后续就可以对 text 做任何测试，而不需要重复的从文件中读取。
 
@@ -49,7 +49,7 @@ Jupyter Notebook 的核心是代码块，每个代码块作为一个整体去执
 可以看到，后面依赖于 text 的代码格并没有自动更新，需要自己手动重新运行：
 
 ![CleanShot 2024-03-18 at 22.20.26@2x.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/546c3bfb6acc4c418b761fbbe555a5a7~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1978&h=1242&s=410234&e=png&b=fbfbfb)
-之所以叫 Notebook 是因为天然支持 markdown，我们新建一个块，然后设置为 markdown 块：
+**之所以叫 Notebook 是因为天然支持 markdown**，我们新建一个块，然后设置为 markdown 块：
 
 ![CleanShot 2024-03-19 at 11.37.55@2x.png](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e83f072f11cb4eeab2bfb16d2589da60~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=2466\&h=1364\&s=442699\&e=png\&b=fafafa)
 
@@ -59,7 +59,7 @@ Jupyter Notebook 的核心是代码块，每个代码块作为一个整体去执
 
 ![转存失败，建议直接上传图片文件](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/96bcc389c60b4e09ab11d6865dc90b36~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=548&h=224&s=8486&e=png&b=f8f8f8)
 
-有了 Jupyter NoteBook，我们就可以节约 费事/费钱 的请求，并且基于某个运行结果的输出，在后面的代码块中，不断尝试各种解析或者处理方式。同时，也非常方便结合 markdown 来做一些笔记，获得比在注释里记录更方便的学习体验。
+有了 Jupyter NoteBook，我们就可以节约 费事/费钱 的请求，并且基于某个运行结果的输出，在后面的代码块中，不断尝试各种解析或者处理方式。同时，也非常方便结合 markdown 来做一些笔记，获得比在注释里记录更方便的学习体验。       
 
 ## 配置
 

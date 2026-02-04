@@ -11,45 +11,17 @@
             "id": "83db13e7bb70faf7",
             "type": "leaf",
             "state": {
-              "type": "pdf",
-              "state": {
-                "file": "read-books/综合素质/毛泽东选集.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "毛泽东选集"
-            }
-          },
-          {
-            "id": "efe65597616a654e",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "read-books/综合素质/金字塔原理_高清版.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "金字塔原理_高清版"
-            }
-          }
-        ],
-        "currentTab": 1
-          },
-          {
-            "id": "d263d4a6d3f1c874",
-            "type": "leaf",
-            "state": {
               "type": "markdown",
               "state": {
-                "file": "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/2-Deno 和 Jupyter Notebook：如何优雅地学习 LLM？.md",
+                "file": "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/4- Langchain.js 的介绍、安装和快速入门.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2-Deno 和 Jupyter Notebook：如何优雅地学习 LLM？"
+              "title": "4- Langchain.js 的介绍、安装和快速入门"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -170,15 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "read-books/综合素质/金字塔原理_高清版.pdf",
-                "file": "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/2-Deno 和 Jupyter Notebook：如何优雅地学习 LLM？.md",
+                "file": "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/4- Langchain.js 的介绍、安装和快速入门.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "金字塔原理_高清版 的大纲"
-              "title": "2-Deno 和 Jupyter Notebook：如何优雅地学习 LLM？ 的大纲"
+              "title": "4- Langchain.js 的介绍、安装和快速入门 的大纲"
             }
           }
         ],
@@ -198,40 +168,39 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "efe65597616a654e",
+  "active": "83db13e7bb70faf7",
   "lastOpenFiles": [
-    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/1-开篇：大模型时代，如何跟上节奏？.md",
-    "README.md",
+    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/5-检索增强生成（RAG）原理和流程.md",
+    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/3-如何方便地获取 OpenAI 服务？.md",
+    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/4- Langchain.js 的介绍、安装和快速入门.md",
+    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/2-Deno 和 Jupyter Notebook：如何优雅地学习 LLM？.md",
+    "read-books/综合素质/毛泽东选集.pdf",
+    "read-books/综合素质/金字塔原理_高清版.pdf",
     "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/9-Embedding：大规模数据的预处理.md",
-    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/6-Prompt：构建可复用的 Prompt Template.md",
     "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/8-Embedding：多数据源加载.md",
     "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/7-OutputParser：构建格式化输出.md",
-    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/5-检索增强生成（RAG）原理和流程.md",
-    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/4- Langchain.js 的介绍、安装和快速入门.md",
-    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/3-如何方便地获取 OpenAI 服务？.md",
+    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/6-Prompt：构建可复用的 Prompt Template.md",
     "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/24-结语：另一个起点.md",
     "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/23-探索模型优势：使用 LLM 来 “算命” 的 chatbot.md",
     "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/22-新交互范式：用 LLM_UI 实现 MBTI chat bot.md",
     "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/21-Agent：深入定制 Agent.md",
     "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/20-Agent：迈出 AGI 第一步，基础 Agent 实现和解析.md",
-    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/2-Deno 和 Jupyter Notebook：如何优雅地学习 LLM？.md",
     "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/19-Agent：agent 基础.md",
     "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/18-Function Calling：使用 LLM 进行数据标注和信息提取.md",
-    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/17-Function Calling：使用 LLM 去调用外界 API.md",
     "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/16-RAG：增强 RAG 能力并部署成 API.md",
+    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/17-Function Calling：使用 LLM 去调用外界 API.md",
     "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/15-Memory：实现自定义 Memory 存储.md",
     "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/14-Memory：深入 Memory 运行机制.md",
+    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/1-开篇：大模型时代，如何跟上节奏？.md",
     "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/13-Memory：让 Chatbot 拥有记忆能力.md",
     "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/12-RAG：基于私域数据进行回答.md",
     "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/11-Retriever：retriever 常见优化方式.md",
     "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/10-Retriever：构建向量数据库.md",
     "read-books/14-从前端到 AI：LangChain.js 入门和实战_online",
-    "read-books/从前端到 AI：LangChain.js 入门和实战_online/6-Prompt：构建可复用的 Prompt Template.md",
+    "README.md",
     "read-books/从前端到 AI：LangChain.js 入门和实战_online",
     "从前端到 AI：LangChain.js 入门和实战_online",
     "Pasted image 20250830160557.png",
-    "read-books/综合素质/毛泽东选集.pdf",
-    "read-books/综合素质/金字塔原理_高清版.pdf",
     "read-books/毛泽东选集.pdf",
     "read-books/00-PDF/2024年前端最新场景题面试攻略.pdf"
   ]

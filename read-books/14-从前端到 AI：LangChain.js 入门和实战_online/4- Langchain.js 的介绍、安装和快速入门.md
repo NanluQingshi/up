@@ -1,10 +1,11 @@
 > 本章对应源代码：https://github.com/RealKai42/langchainjs-juejin/blob/main/basic-langchain.ipynb
 
-在本章和后续的教程中，我会默认使用 Deno 环境，如果使用的 nodejs 我会特别标注出来。  
+在本章和后续的教程中，==**我会默认使用 Deno 环境，如果使用的 nodejs 我会特别标注出来。**  ==
 当然因为 Deno 和 Node.js 代码上除了部分 API 外大同小异，使用 Node.js 的同学也可以简单修改一些细节来成功运行。
 
 
 ## 基础配置
+
 首先，我们向 `deno.json` 中添加 langchain 相关的依赖别名，为了保证大家正常学习教程，我们会锁定版本：
 
 ```json
@@ -42,7 +43,7 @@ const process = {
 站在当前这个时间点，我认为应该全面转向 LCEL，可以抛弃之前的旧写法，为了防止混淆，本教程所有代码都会基于 LCEL，也并不会介绍旧的 langchain 写法。
 
 那 LCEL 有什么优势呢？
-LCEL 从底层设计的目标就是支持 从原型到生产 完整流程不需要修改任何代码，也就是我们在写的任何原型代码不需要太多的改变就能支持生产级别的各种特性（比如并行、steaming 等），具体来说会有这些优势：
+LCEL 从底层设计的目标就是支持 从原型到生产 完整流程不需要修改任何代码，也就是我们在写的任何原型代码不需要太多的改变就能支持生产级别的各种特性（比如并行、steaming 等），具体来说会有这些**优势**：
 
 - 并行，只要是整个 chain 中有可以并行的步骤就会自动的并行，来减少使用时的延迟。
 - 自动的重试和 fallback。大部分 chain 的组成部分都有自动的重试（比如因为网络原因的失败）和回退机制，来解决很多请求的出错问题。 而不需要我们去写代码 cover 这些问题。
@@ -52,7 +53,7 @@ LCEL 从底层设计的目标就是支持 从原型到生产 完整流程不需�
 
 一条 Chain 组成的每个模块都是继承自 `Runnable` 这个接口，而一条 Chain 也是继承自这个接口，所以一条 Chain 也可以很自然的成为另一个 Chain 的一个模块。并且所有 `Runnable` 都有相同的调用方式。 所以在我们写 Chain 的时候就可以自由组合多个 `Runnable` 的模块来形成复杂的 Chain。  
 
-对于任意 `Runnable` 对象，其都会有这几个常用的标准的调用接口：
+对于任意 `Runnable` 对象，其都会有这几个==**常用的标准的调用接口**==：
 - `invoke` 基础的调用，并传入参数
 - `batch` 批量调用，输入一组参数
 - `stream` 调用，并以 stream 流的方式返回数据
@@ -120,7 +121,7 @@ await simpleChain.invoke([
 "Why don't scientists trust atoms?\n\nBecause they make up everything."
 ```
 
-在 LCEL 中，使用 `.pipe()` 方法来组装多个 `Runnable` 对象形成完整的 Chain，可以看到我们是用对单个模块同样的 `invoke` 方法去调用整个 chain。 因为无论是单个模块还是由模块组装而成的多个 chain 都是 `Runnable`。
+==**在 LCEL 中，使用 `.pipe()` 方法来组装多个 `Runnable` 对象形成完整的 Chain**==，可以看到我们是用对单个模块同样的 `invoke` 方法去调用整个 chain。 因为无论是单个模块还是由模块组装而成的多个 chain 都是 `Runnable`。
 
 ### batch
 
@@ -191,6 +192,7 @@ for await (const chunk of stream){
 ```
 
 ### fallback
+
 `withFallbacks` 是任何 runnable 都有的一个函数，可以给当前 runnable 对象添加 fallback 然后生成一个带 fallback 的  `RunnableWithFallbacks` 对象，这适合我们将自己的 fallback 逻辑增加到 LCEL 中。  
 
 例如，我们创建一个一定会失败的 llm ：
@@ -220,13 +222,14 @@ await llmWithFallback.invoke("你好")
 
 就会输出正确的结果。
 
-因为无论是 llm model 或者其他的模块，还是整个 chain 都是 runnable 对象，所以我们可以给整个 LCEL 流程中的任意环节去增加 fallback，来避免一个环节出问题卡住剩下环境的运行。  
+因为无论是 llm model 或者其他的模块，还是整个 chain 都是 runnable 对象，所以我们==**可以给整个 LCEL 流程中的任意环节去增加 fallback**==，来避免一个环节出问题卡住剩下环境的运行。  
 
-当然，我们也可以给整个 chain 增加 fallback，例如一个复杂但输出高质量的结果的 chain 可以设置一个非常简单的 chain 作为 fallback，可以在极端环境下保证至少有输出。
+当然，我们也可以给整个 chain 增加 fallback，例如一个复杂但输出高质量结果的 chain 可以设置一个非常简单的 chain 作为 fallback，可以在极端环境下保证至少有输出。
 
 
 
 ## 小结
+
 That's All!  
 这就是 langchain.js 基础，如果你在 LCEL 之前学习过 langchain，你会发现 LCEL 极大的降低了 langchain 的使用难度，并且为使用 chain 提供了开箱即用的生产级能力支持。其最大的魅力就是进一步强化了模块化，可以方便的复用各种 chain 来组合成更复杂的 chain。  
 
