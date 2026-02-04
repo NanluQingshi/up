@@ -1,12 +1,10 @@
-
+# 1.前言
+---
 前面的章节，我们提到了 `Electron` 的原生能力中包含一些 Electron 所提供的原生 API，以及 Node.js 提供的一些底层能力，还可以通过 Node.js 调用一些原生模块以及通过 Node.js 调用一些操作系统的 OS 脚本。
 
 这个小节，我们将详细介绍这几种原生能力的使用方式，帮助你更好地使用一些原生功能。
-
-
-
-## Electron 的原生 GUI 能力
-
+# 2.Electron 的原生 GUI 能力
+---
 我们知道，Electron 通过集成浏览器内核，使用 Web 技术来实现不同平台下的渲染，并结合了 Chromium、Node.js 和用于调用系统本地功能的 API 三大板块。但是 Chromium 并不具备原生 GUI（图形用户界面，Graphical User Interface） 的操作能力，因此 Electron 内部集成一些原生 GUI 的 API，编写 UI 的同时也能够调用操作系统的底层 API。
 
 
@@ -29,7 +27,7 @@ const notify = new Notification({
 });
 notify.show();
 ```
-Electron 底层会根据操作系统的不同，调用不同的原生 API，进而展示出不同的交互样式。
+**Electron 底层会根据操作系统的不同，调用不同的原生 API**，进而展示出不同的交互样式。
 
 MacOS：
 
@@ -39,10 +37,8 @@ Windows：
 
 <p align=center><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9828466b127f481bbf7fe29cc54cae64~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=483&h=208&s=104412&e=png&b=e8e8e8" alt="image.png"  /></p>
 
-
-
-## Electron 操作系统底层能力的 API
-
+# 3.Electron 操作系统底层能力的 API
+---
 除了上面介绍的一些原生 `GUI` 能力外，Electron 还提供了一些对操作系统底层能力的封装 API。常用的有：
 
 - [clipboard 剪贴板](https://www.electronjs.org/zh/docs/latest/api/clipboard)
@@ -59,11 +55,8 @@ import { clipboard } from 'electron';
 clipboard.writeText('Example string', 'selection');  
 console.log(clipboard.readText('selection'));
 ```
-
-
-
-## Node.js 的 API
-
+# 4.Node.js 的 API
+---
 前面的章节，我们提到了 `Electron` 架构中使用了 `Chromium` 的 `Renderer Process` 渲染界面，`Renderer Process` 可以有多个，并且 `Electron` 为其集成了 `Node` 运行时。但每个应用程序只能有一个主线程，主线程位于 `Node.js` 下运行。
 
 <p align=center><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f690e50b308440df902e917f8f38b1ea~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1986&h=1024&s=111571&e=png&a=1&b=73bff9" alt="image.png"  /></p>
@@ -74,25 +67,21 @@ console.log(clipboard.readText('selection'));
 
 需要注意的是，不同 Electron 版本集成的 Node.js 版本不一样，所以在使用 Node.js API 的时候要注意版本问题，可以通过 [Electron release 记录](https://releases.electronjs.org/)查询到对应的 Node 版本。
 
-
-
-## Node.js 调用原生能力
-
+# 5.Node.js 调用原生能力
+---
 虽然 Electron 已经为我们提供了大量的跨平台的 Native APIs，但是依然不能涵盖到桌面端应用开发的方方面面，接下来的内容将会简要介绍 node 调用原生能力的几种方式和方法。
-
-
-### 1. 使用 C++ 构建 node 原生模块
+## 5.1 使用 C++ 构建 node 原生模块
 
 作为前端开发者而言，都或多或少依赖一些 native addon。在前端中比较常见的比如 `node-sass`、 `node-canvas`、 `sharp` 等。在介绍使用 C++ 构建原生模块前，我们需要先储备一些基础知识。
 
-#### 1.1 原生模块的本质
+### 5.1.1 原生模块的本质
 在介绍使用 C++ 构建 node 原生模块之前，我们需要先了解一下原生模块本质。
 
 <p align=center><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/52c613d8ced148b5b3510c83e63d09ba~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1588&h=424&s=77274&e=png&a=1&b=c6fbd9" alt="image.png"  /></p>
 
 当一个 Node.js 的 C++ 模块在 OSX 下编译会得到一个后缀是  ***.node** 的模块，本质上是  ***.dylib** 的动态链接库；而在 Windows 上本质上是  ***.dll** 的动态链接库。在 Linux 下则是 **.so** 的动态链接库。
 
-#### 1.2 node-gyp
+### 5.1.2 node-gyp
 `node-gyp` 是一个 Node.js 包，它用于构建 Node.js C++ 扩展。这个工具允许你编译和构建需要 C++ 代码的 Node.js 模块。它是一个使用 Python 和 C++ 构建 Node.js 扩展的构建系统。
 
 `node-gyp` 是基于 Google 的 gyp 构建系统实现的构建工具，它会识别包或者项目中的 **binding.gyp** 文件，然后根据该配置文件生成各系统下能进行编译的项目，如 `Windows` 下生成 `Visual Studio` 项目文件（ ***.sln** 等），`Unix` 下生成 `Makefile`。在生成这些项目文件之后，`node-gyp` 还能调用各系统的编译工具（如 GCC）来将项目进行编译，得到最后的动态链接库  ***.node** 文件。
@@ -101,7 +90,7 @@ console.log(clipboard.readText('selection'));
 > 
 > 更多在 Windows 下安装 `node-gyp` 构建环境的教程可以参考这篇文章：[windows 下 node-gyp 的环境配置](https://juejin.cn/post/7118412140582535175)。
 
-#### 1.3 编写 C++ 扩展的几种方式
+### 5.1.3 编写 C++ 扩展的几种方式
 
 **NAN（Native Abstractions for Node.js）** 
 
@@ -116,9 +105,7 @@ console.log(clipboard.readText('selection'));
 [Node-addon-api](https://github.com/nodejs/node-addon-api) 是 Node.js 提供的另一个 C++ 扩展 API。它是一个用于编写跨平台的 Node.js C++ 扩展的库。Node-addon-api 是构建在 NAPI 之上的，提供了更加简单的 API，使得扩展开发者可以更加容易地编写跨版本、跨平台的扩展。它还提供了一些方便的功能，如自动内存管理、V8 值的类型转换等。
 
 这三个工具或 API 都是为了帮助开发者编写可移植、跨平台的 Node.js C++ 插件，但它们的定位和功能略有不同。N-API 是官方提供的稳定接口，而 NAN 则是它的前身，node-addon-api 则是基于 N-API 的高级封装。
-
-
-#### 1.4 binding.gyp
+### 5.1.4 binding.gyp
 `binding.gyp` 是一个用于描述 Node.js 插件构建过程的配置文件。这个文件使用 JSON 格式，但它实际上是为了描述构建系统（例如 Node-gyp）所需的构建配置和元数据。
 
 下面是一个使用 node-addon-api 编写的模块的 `binding.gyp` 文件示例：
@@ -152,8 +139,8 @@ console.log(clipboard.readText('selection'));
   ]
 }
 ```
+### 5.1.5 开发一个 C++ 扩展
 
-#### 1.5 开发一个 C++ 扩展
 有了上面的知识，我们来介绍一下如何开发一个简单的 C++ 扩展。先来看看目录结构：
 
 ```shell
@@ -229,7 +216,7 @@ const addon = require('./build/Release/hello.node');
 module.exports = addon;
 ```
 
-#### 1.6 使用 node-bindings 包
+### 5.1.6 使用 node-bindings 包
 在上面的例子中，我们在 `index.js` 文件中，直接通过相对路径的方式引用了编译好的 `.node` 文件。但是在大多数情况下，由于 Node.js Addon 存在各种不同的方案、构建配置，那 .node 文件产物的位置可能也会因此不同，所以我们需要借助一个 [node-bindings](https://github.com/TooTallNate/node-bindings) 包来自动为我们寻找 .node 文件的位置：
 
 ```js
@@ -238,7 +225,7 @@ const addon = require('bindings')('hello.node');
 module.exports = addon;
 ```
 
-#### 1.7 使用 node-pre-gyp
+### 5.1.7 使用 node-pre-gyp
 由于使用安装包的用户可能存在着不同的操作系统和 node ABI 版本，为了可以自动编译当前系统架构所对应的产物，我们大多数情况下不得不让用户在安装 C++ 扩展包时使用用户设备进行 Addon 的编译，那么这个时候就需要修改一下我们扩展包的 `package.json` 文件：
 
 ```json
@@ -274,8 +261,7 @@ module.exports = addon;
   "host": "https://your_module.s3-us-west-1.amazonaws.com"
 }
 ```
-
-#### 1.8 Electron 上引入原生模块
+### 5.1.8 Electron 上引入原生模块
 如果你使用的 C++ 扩展是通过安装时编译而不是预编译的方式实现的，那么 Electron 在引入包进行本地编译时，编译出的原生模块不一定能在 Electron 应用中正常工作，有可能会报以下错误：
 
 ```bash
@@ -299,15 +285,14 @@ npm install --save-dev electron-rebuild
 # 在 windows 下如果上述命令遇到了问题，尝试这个：
 .\node_modules.bin\electron-rebuild.cmd --force --module-dir=xxx
 ```
-
-### 2. 使用 node-ffi-napi 调用动态链接库
+## 5.2 使用 node-ffi-napi 调用动态链接库
 [ node-ffi-napi](https://github.com/node-ffi-napi/node-ffi-napi) 是一个用于使用纯 JavaScript 加载和调用动态库的 Node.js 插件。它可以用来在不编写任何 C++ 代码的情况下创建与本地 DLL 库的绑定。同时它负责处理跨 JavaScript 和 C 的类型转换。
 
 但是，它的性能可能较低，并且不适用于需要较高性能或对 V8 引擎更深层次控制的情况。
 
 `node-ffi-napi` 通过 `Buffer` 类，在 C 代码和 JS 代码之间实现了内存共享，类型转换则是通过 [ref-napi](https://github.com/node-ffi-napi/ref-napi)、[ref-array-napi](https://github.com/Janealter/ref-array-napi) 实现。由于 `node-ffi-napi` / `ref-napi` 包含 C 原生代码，所以安装需要配置 Node 原生插件编译环境。
 
-#### 一个简单的示例
+### 一个简单的示例
 在 Windows 平台上，动态链接库指的是 `.dll` 文件，关于如何开发一个 `.dll` 文件，不在本小册的主题之内，有兴趣的可以阅读这篇文章：[Electron9.x +Vue +ffi-napi 调用DLL库](https://juejin.cn/post/6854573212341108749)。
 
 接下来，我们来实现调用 Windows 系统 `user32.dll` 中的消息对话框 MessageBoxW。那么，我们就可以使用 `node-ffi-napi` 来进行调用：
@@ -350,16 +335,14 @@ myUser32.MessageBoxW(0, showText('my windows DLL'), showText('DLL dialog'), 0);
 > - https://www.npmjs.com/package/@lwahonen/ffi-napi
 > - https://www.npmjs.com/package/@lwahonen/ref-napi
 
-### 3. 使用 Rust 构建 Node 原生模块
+## 5.3 使用 Rust 构建 Node 原生模块
 除了使用 C++ 构建 Node 原生模块以及 `node-ffi-napi` 调用动态链接库以外，我们还可以使用 `Rust` 来构建 Node 的原生扩展，关于这部分内容比较体系，因此我单独拎出来一个章节进行介绍：[《通用篇：使用 Rust 开发 Electron 原生扩展》](https://juejin.cn/book/7302990019642261567/section/7317079096541282341)。
 
-
-## Node 调用 OS 脚本
-
+# 6.Node 调用 OS 脚本
+---
 我们也可以使用 Node.js 调用系统集成好的一些能力，接下来我们将分别介绍不同平台的一些 OS 脚本能力。
 
-
-### 1. WinRT
+## 6.1 WinRT
 
 `WinRT（Windows Runtime）` 是 Microsoft 开发的一种应用程序框架，用于创建 Windows 平台上的通用应用程序。它提供了一系列 API，允许开发者使用多种编程语言（如 C++、C#、JavaScript）编写适用于 Windows 8 及更新版本的应用程序。
 
@@ -386,8 +369,7 @@ locator.getGeopositionAsync((error, result) => {
 
 <p align=center><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/445eab5801ef490ea4b12fe69992b552~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=677&h=499&s=30275&e=png&b=000000" alt="image.png"  /></p>
 
-
-### 2. AppleScript
+## 6.2 AppleScript
 
 `AppleScript` 是 macOS 和 Mac OS Classic 中的脚本语言，用于自动化和控制 Mac 系统上的各种操作和应用程序。
 
@@ -412,8 +394,7 @@ applescript.execString(script, (err, rtn) => {
   }
 });
 ```
-
-### 3. Shell 脚本
+## 6.3 Shell 脚本
 Shell 提供了与操作系统交互的命令行界面，允许用户执行文件操作、进程管理、系统设置等。通常我们可以使用 node 的 `child_process` 模块来调用和执行一些命令行脚本。比如，我们想调用 windows 中的一个 `.exe` 可执行文件：
 
 ```js
@@ -428,12 +409,10 @@ exeRes.on('exit', () => {
 });
 ```
 
-## 总结
-
+# 7.总结
+---
 本小节，我们详细介绍了 `Electron` 中调用原生能力的几种方式，除了使用 `Electron Native APIs` 外，依托于 `Node` 的能力，我们还可以使用 `Node APIs` 以及 `Node addon` 和 `OS` 脚本的能力。
 
-希望通过本小节的介绍，可以让你在遇到需要原生能力才能解决的问题的时候，选择适合自己的工具和方法。
-
-
+希望通过本小节的介绍，可以让你==**在遇到需要原生能力才能解决的问题的时候，选择适合自己的工具和方法。**==
 
 
