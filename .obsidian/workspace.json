@@ -30,23 +30,9 @@
               "icon": "lucide-file-text",
               "title": "金字塔原理_高清版"
             }
-          },
-          {
-            "id": "d263d4a6d3f1c874",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "read-books/10-Electron应用开发实践指南/1、开篇：Electron_带来的边界扩展.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "1、开篇：Electron_带来的边界扩展"
-            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -103,8 +89,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 386.5026054382324,
-    "collapsed": true
+    "width": 363.50390243530273
   },
   "right": {
     "id": "0a16629bb78b3bb0",
@@ -168,13 +153,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "read-books/10-Electron应用开发实践指南/1、开篇：Electron_带来的边界扩展.md",
+                "file": "read-books/综合素质/金字塔原理_高清版.pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "1、开篇：Electron_带来的边界扩展 的大纲"
+              "title": "金字塔原理_高清版 的大纲"
             }
           }
         ],
@@ -182,7 +167,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 273.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -194,37 +179,41 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "d263d4a6d3f1c874",
+  "active": "efe65597616a654e",
   "lastOpenFiles": [
+    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/2-Deno 和 Jupyter Notebook：如何优雅地学习 LLM？.md",
+    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/1-开篇：大模型时代，如何跟上节奏？.md",
+    "README.md",
+    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/9-Embedding：大规模数据的预处理.md",
+    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/6-Prompt：构建可复用的 Prompt Template.md",
+    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/8-Embedding：多数据源加载.md",
+    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/7-OutputParser：构建格式化输出.md",
+    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/5-检索增强生成（RAG）原理和流程.md",
+    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/4- Langchain.js 的介绍、安装和快速入门.md",
+    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/3-如何方便地获取 OpenAI 服务？.md",
+    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/24-结语：另一个起点.md",
+    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/23-探索模型优势：使用 LLM 来 “算命” 的 chatbot.md",
+    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/22-新交互范式：用 LLM_UI 实现 MBTI chat bot.md",
+    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/21-Agent：深入定制 Agent.md",
+    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/20-Agent：迈出 AGI 第一步，基础 Agent 实现和解析.md",
+    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/19-Agent：agent 基础.md",
+    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/18-Function Calling：使用 LLM 进行数据标注和信息提取.md",
+    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/17-Function Calling：使用 LLM 去调用外界 API.md",
+    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/16-RAG：增强 RAG 能力并部署成 API.md",
+    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/15-Memory：实现自定义 Memory 存储.md",
+    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/14-Memory：深入 Memory 运行机制.md",
+    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/13-Memory：让 Chatbot 拥有记忆能力.md",
+    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/12-RAG：基于私域数据进行回答.md",
+    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/11-Retriever：retriever 常见优化方式.md",
+    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/10-Retriever：构建向量数据库.md",
+    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online",
+    "read-books/从前端到 AI：LangChain.js 入门和实战_online/6-Prompt：构建可复用的 Prompt Template.md",
+    "read-books/从前端到 AI：LangChain.js 入门和实战_online",
+    "从前端到 AI：LangChain.js 入门和实战_online",
+    "Pasted image 20250830160557.png",
     "read-books/综合素质/毛泽东选集.pdf",
     "read-books/综合素质/金字塔原理_高清版.pdf",
     "read-books/毛泽东选集.pdf",
-    "read-books/01-浏览器工作原理与实践/36.HTTPS：让数据传输更安全.md",
-    "read-books/01-浏览器工作原理与实践/40.加餐一｜浏览上下文组：如何计算 Chrome 中渲染进程的个数？.md",
-    "read-books/01-浏览器工作原理与实践/41.加餐二｜任务调度：有了setTimeOut，为什么还要使用rAF？.md",
-    "read-books/01-浏览器工作原理与实践/35.安全沙箱：页面和系统之间的隔离墙.md",
-    "read-books/01-浏览器工作原理与实践/38.第二季回归这次我们来专门聊聊 V8.md",
-    "read-books/01-浏览器工作原理与实践/37.结束语：大道至简.md",
-    "read-books/01-浏览器工作原理与实践/34.CSRF 攻击：陌生链接不要随便点.md",
-    "read-books/01-浏览器工作原理与实践/32.同源策略：为什么 XMLHttpRequest 不能跨域请求资源？.md",
-    "read-books/01-浏览器工作原理与实践/33.跨站脚本攻击（XSS）：为什么 Cookie 中有HttpOnly 属性？.md",
-    "read-books/01-浏览器工作原理与实践/31.HTTP3：甩掉 TCP、TLS 的包袱，构建高效网络.md",
-    "read-books/01-浏览器工作原理与实践/30.HTTP2：如何提升网络速度？.md",
-    "read-books/01-浏览器工作原理与实践/29.HTTP1：HTTP 性能优化.md",
-    "read-books/01-浏览器工作原理与实践/28.WebComponent：像搭积木一样构建 Web 应用.md",
-    "read-books/01-浏览器工作原理与实践/27.渐进式网页应用（PWA）：它究竟解决了Web应用的哪些问题？.md",
-    "read-books/01-浏览器工作原理与实践/26.虚拟 DOM：虚拟 DOM 和实际的 DOM 有何不同？.md",
-    "read-books/01-浏览器工作原理与实践/25.页面性能：如何系统地优化页面？.md",
-    "read-books/01-浏览器工作原理与实践/25.25页面性能：如何系统地优化页面？.md",
-    "read-books/01-浏览器工作原理与实践/24.分层和合成机制：为什么 CSS 动画比 JavaScript 高效？.md",
-    "read-books/01-浏览器工作原理与实践/22.DOM树：JavaScript 是如何影响 DOM 树构建的？.md",
-    "read-books/01-浏览器工作原理与实践/23.渲染流水线：CSS 如何影响首次加载时的白屏时间？.md",
-    "read-books/01-浏览器工作原理与实践/05.渲染流程（上）：HTML、CSS和JavaScript，是如何变成页面的？.md",
-    "read-books/01-浏览器工作原理与实践/06.渲染流程（下）：HTML、CSS和JavaScript，是如何变成页面的？.md",
-    "read-books/01-浏览器工作原理与实践/21.Chrome 开发者工具：利用网络面板做性能分析.md",
-    "read-books/01-浏览器工作原理与实践/20.async-await：使用同步的方式去写异步代码.md",
-    "read-books/01-浏览器工作原理与实践/19.Promise：使用 Promise，告别回调函数.md",
-    "Pasted image 20250830160557.png",
     "read-books/00-PDF/2024年前端最新场景题面试攻略.pdf"
   ]
 }
