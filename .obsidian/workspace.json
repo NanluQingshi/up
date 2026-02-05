@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/7-OutputParser：构建格式化输出.md",
+                "file": "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/8-Embedding：多数据源加载.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "7-OutputParser：构建格式化输出"
+              "title": "8-Embedding：多数据源加载"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/7-OutputParser：构建格式化输出.md",
+                "file": "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/8-Embedding：多数据源加载.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "7-OutputParser：构建格式化输出 的大纲"
+              "title": "8-Embedding：多数据源加载 的大纲"
             }
           }
         ],
@@ -170,6 +170,7 @@
   },
   "active": "83db13e7bb70faf7",
   "lastOpenFiles": [
+    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/7-OutputParser：构建格式化输出.md",
     "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/6-Prompt：构建可复用的 Prompt Template.md",
     "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/5-检索增强生成（RAG）原理和流程.md",
     "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/4- Langchain.js 的介绍、安装和快速入门.md",
@@ -179,7 +180,6 @@
     "read-books/综合素质/金字塔原理_高清版.pdf",
     "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/9-Embedding：大规模数据的预处理.md",
     "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/8-Embedding：多数据源加载.md",
-    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/7-OutputParser：构建格式化输出.md",
     "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/24-结语：另一个起点.md",
     "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/23-探索模型优势：使用 LLM 来 “算命” 的 chatbot.md",
     "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/22-新交互范式：用 LLM_UI 实现 MBTI chat bot.md",

@@ -1,11 +1,11 @@
 > 本章对应源代码：https://github.com/RealKai42/langchainjs-juejin/blob/main/loader.ipynb
 
-这一节我们将核心聚焦在数据源的加载。因为 RAG 的本质是给 chat bot 外挂数据源，而考虑到各种应用场景，数据源的形式也多种多样，有的是文件/数据库/网络数据/代码 等等情况。 针对此，langchain 提供了一系列的开箱即用的 loader 来帮助开发者处理不同数据源的数据。
+这一节我们将核心聚焦在数据源的加载。因为 ==**RAG 的本质是给 chat bot 外挂数据源**==，而考虑到各种应用场景，数据源的形式也多种多样，有的是文件/数据库/网络数据/代码 等等情况。 针对此，langchain 提供了一系列的开箱即用的 loader 来帮助开发者处理不同数据源的数据。
 
 
 ## Document 对象
-
-Document 对象你可以理解成 langchain 对所有类型的数据的一个统一抽象，其中包含 
+---
+Document 对象你可以理解成 **langchain 对所有类型数据的一个统一抽象**，其中包含 
 - `pageContent` 文本内容，即文档对象对应的文本数据
 - `metadata` 元数据，文本数据对应的元数据，例如 原始文档的标题、页数等信息，可以用于后面 `Retriver` 基于此进行筛选。
 
@@ -19,7 +19,6 @@ interface Document {
 ```
 
 `Document` 对象一般是由各种 `Loader` 自动创建，当然我们也可以手动创建
-
 
 ```js
 import { Document } from "langchain/document";
@@ -36,9 +35,11 @@ Document {
 }
 ```
 ## Loader
-处理数据的第一部就是加载数据，正常我们需要为目标的数据格式（json、csv、txt）来查找需要的库和写加载文件的代码，而有了 langchain 后，其内置了大多数据文件的读取支持，这里我们以常见的一些 loader 来带大家简单入门。
+---
+==**处理数据的第一步就是加载数据**==，正常我们需要为目标的数据格式（json、csv、txt）来查找需要的库和写加载文件的代码，而有了 langchain 后，其内置了大多数据文件的读取支持，这里我们以常见的一些 loader 来带大家简单入门。
 
 ### TextLoader
+
 首先是 `TextLoader`，我们将用此介绍 Loader 中的基础概念。  
 使用起来非常直觉，就是对文件所在的路径进行加载
 
@@ -91,7 +92,7 @@ const loader = new PDFLoader("data/github-copliot.pdf");
 const pdfs = await loader.load()
 ```
 
-打印出来 `pdfs`是一个 `Document` 数组，其中每一个 `Document` 对象对应了 pdf 中的一页，这是 `PDFLoader` 的默认行为。  
+打印出来 `pdfs`是一个 `Document` 数组，其中==**每一个 `Document` 对象对应了 pdf 中的一页**==，这是 `PDFLoader` 的默认行为。  
 我们可以使用配置关闭这个特性
 
 ```js
@@ -132,9 +133,8 @@ Document {
 可以看到其中的 `metadata` 就更丰富了，包含了从 PDF 中读取到的一系列信息，可以帮我们后续对 `Document` 对象做一些处理。
 
 ### DirectoryLoader
-
+---
 当我们需要加载一个文件夹下多种格式的文件时，就可以使用 `DirectoryLoader`，我们需要预先定义对该文件夹不同文件类型的 `Loader`
-
 
 ```js
 import { DirectoryLoader } from "langchain/document_loaders/fs/directory";
@@ -154,17 +154,11 @@ const docs = await loader.load();
 
 可以看到，在使用了 Langchain 之后，各种繁琐的数据文件的加载和处理都被 langchain 所实现，我们只按需调用相应的 Loader 即可，这大大加速了我们开发 LLM related app 的速度。
 
-
-
-
-
 ## Web Loader
-上面主要讲的是从文件中去加载数据，而来自网络的数据也是 chat bot 比较重要的数据源，例如 new bing 等基于搜索的 chat bot，就是根据用的需求去从互联网爬取数据，然后以此为上下文进行回答，我们会讲解几个常见的数据源的抓取方式。
-
-
+---
+上面主要讲的是==**从文件中去加载数据，而来自网络的数据也是 chat bot 比较重要的数据源**==，例如 new bing 等基于搜索的 chat bot，就是根据用的需求去从互联网爬取数据，然后以此为上下文进行回答，我们会讲解几个常见的数据源的抓取方式。
 ### Github loader
 基于某个开源项目构建数据库，然后根据用户提问寻找与此相关的代码片段回答用户问题，是很多开发者梦想中的工具。因为我们开发中经常遇到文档不全需要自己寻找源代码找到解决办法的场景，让 llm 去寻找和理解显然比我们的速度要快很多。
-
 
 ```js
 import { GithubRepoLoader } from "langchain/document_loaders/web/github";
@@ -208,14 +202,10 @@ Document {
 ]
 ```
 
-
 `GithubRepoLoader` 会在爬取的文件的时候自动记录下相关的 `metadata`，方便后续使用
-
-
 ### WebLoader
-
-对于 llm 所需要提取的信息是网页中静态的信息时，一般使用 Cheerio 用来提取和处理 html 内容，类似于 python 中的 BeautifulSoup。 这两者都是只能针对静态的 html，无法运行其中的 js, 对大部分场景都是够用的
-
+---
+对于 llm 所需要提取的信息是==**网页中静态的信息**==时，一般使用 Cheerio 用来提取和处理 html 内容，类似于 python 中的 BeautifulSoup。 这两者都是只能针对静态的 html，无法运行其中的 js, 对大部分场景都是够用的
 
 ```js
 import "cheerio";
@@ -252,9 +242,8 @@ console.log(docs[0].pageContent)
 ```
 
 ### Search API
-
+---
 这是给 chatbot 接入网络支持最重要的 API，对于 langchain.js 来说，常用的是 `SearchApiLoader` 和 `SerpAPILoader` 这个两个提供的都是接入搜索的能力，免费计划都是每个月 100 次 search 能力，除了 google 外，也支持 baidu/bing 等常用的搜索引擎。这两个 API 的使用方式大差不差，所以我们这里以 `SerpAPILoader` 来讲解。
-
 
 ```js
 import { SerpAPILoader } from "langchain/document_loaders/web/serpapi";
@@ -283,11 +272,10 @@ const docs = await loader.load();
   ...]
 ```
 
-serp 非常强大，其不止是返回 google 搜索的结果，并且会爬取每个结果的汇总和信息放在 pageContent，搭配 lanchain 的对应的集成了，提供了开箱即用的接入 google 搜索和爬取内容的能力，也就是给 chatbot 提供了访问互联网的能力。
-
+serp 非常强大，其不止是返回 google 搜索的结果，并且会爬取每个结果的汇总和信息放在 pageContent，搭配 lanchain 的对应的集成，提供了==**开箱即用的接入 google 搜索和爬取内容**==的能力，也就是给 chatbot 提供了访问互联网的能力。
 ## 小结
-
-本节我们主要介绍了数据在 langchain 是如何通过 `Document` 对象来进行组织和管理的，以及如何使用不同的 loader 从 文件/github/网页/搜索引擎 去加载数据。我们只是介绍 langchain 中常用的一部分 loader，作为一个正在蓬勃发展的社区，langchain 有各种各样的数据加载 loader，也可以很方便的去实现自己的 loader。通过本节的学习，我们掌握了如何把我们现存的文件数据和网络数据加载进 langchain 的能力，下一节，我们将学习如何对数据进行预处理。
+---
+本节我们主要介绍了数据在 langchain 是如何通过 `Document` 对象来进行组织和管理的，以及如何使用不同的 loader 从== **文件/github/网页/搜索引擎**== 去加载数据。我们只是介绍 langchain 中常用的一部分 loader，作为一个正在蓬勃发展的社区，langchain 有各种各样的数据加载 loader，也可以很方便的去实现自己的 loader。通过本节的学习，我们掌握了如何把我们现存的文件数据和网络数据加载进 langchain 的能力，下一节，我们将学习如何对数据进行预处理。
 
 
 
