@@ -4,9 +4,8 @@
 
 在这一章节里，我们会带着大家将之前切分后的数据集，构建出对应的 embedding 对象，然后将
 所有 embedding 存储在 vector db 中，并尝试根据用户的提问对 vector db 进行检索，找到与用户提问最相关的数据集。
-
 ## Embedding！
-
+---
 我们首先复用之前文章的代码，将鲁迅的一本小说切分成模块，
 
 ```js
@@ -54,7 +53,6 @@ const embeddings = new OpenAIEmbeddings()
 console.log(splitDocs[0])
 ```
 
-
 ```js
 Document {
   pageContent: "鲁镇的酒店的格局，是和别处不同的：都是当街一个曲尺形的大柜台，柜里面预备着热水，可以随时温酒。做工的人，傍午傍晚散了工，每每花四文铜钱，买一碗酒，——这是二十多年前的事，现在每碗要涨到十文，——靠柜外",
@@ -62,11 +60,12 @@ Document {
 }
 ```
 
-在 embedding 的时候，模型关注的就是 `pageContent`，并不会关心 metadata 的部分，
+在 embedding 的时候，==模型关注的就是 `pageContent`，并不会关心 metadata 的部分==，
 
 ```js
 const res = await embeddings.embedQuery(splitDocs[0].pageContent)
 ```
+
 然后，我们看一下 embedding 的结果的样子
 
 ```js
@@ -80,15 +79,13 @@ const res = await embeddings.embedQuery(splitDocs[0].pageContent)
 
 embedding 的原理我们在前面介绍过，本质上就是用一个向量来表示这段文本，具体的详细科普可以看前面的章节。
 
-
-
 ## 创建 MemoryVectorStore
-
-Vector store 提供提供的是存储向量和原始文档，并且提供基于向量进行相关性检索的能力。Langchain 提供了用于测试时，在内存中构建的向量数据库，并且支持多种常见的相似性度量方式。  
+---
+==**Vector store 提供的是存储向量和原始文档**==，并且提供基于向量进行相关性检索的能力。Langchain 提供了用于测试时，在内存中构建的向量数据库，并且支持多种常见的相似性度量方式。  
 
 注意，因为 embedding 向量是需要有一定的花费的，所以仅在学习和测试时使用 `MemoryVectorStore`，而在真实项目中，搭建其他向量数据库，或者使用云数据库。所以，这部分可以先看教程，不用跟着操作，在后面使用有持久化能力的 vector store 再操作，来节约花费。  
 
-我们创建 `MemoryVectorStore` 的实例，并传入需要 embeddings 的模型，调用添加文档的 `addDocuments` 函数，然后 langchain 的 `MemoryVectorStore` 就会自动帮我们完成对每个文档请求 embeddings 的模型，然后存入数据库的操作。
+我们创建 `MemoryVectorStore` 的实例，并传入需要 embeddings 的模型，调用添加文档的 `addDocuments` 函数，然后 langchain 的 `MemoryVectorStore` 就会==**自动帮我们完成对每个文档请求 embeddings 的模型，然后存入数据库的操作**==。
 
 ```js
 import { MemoryVectorStore } from "langchain/vectorstores/memory";
@@ -124,7 +121,6 @@ const res = await retriever.invoke("茴香豆是做什么用的")
 
 就提取出跟茴香豆相关的内容。 因为在提取的时候，是根据相似度进行度量的，所以如果用户提问的特别简洁，并没有相应的关键词，就会出现提取的信息错误的问题，例如：
 
-
 ```js
 const res = await retriever.invoke("下酒菜一般是什么？")
 
@@ -159,33 +155,31 @@ const res = await retriever.invoke("孔乙己用什么谋生？")
   }
 ]
 ```
-这种情况只依靠相似度的对比就很难查找到正确的数据源，需要多层语意的转换才能找到合适数据源，这种情况也有解决方式，我们会在后续的优化章节展开介绍。
-
+这种情况只依靠相似度的对比就很难查找到正确的数据源，==**需要多层语意的转换才能找到合适数据源**==，这种情况也有解决方式，我们会在后续的优化章节展开介绍。
 
 ## 构建本地 vector store
-
+---
 > 本节对应源代码：  
 > https://github.com/RealKai42/langchainjs-juejin/blob/main/node/prepare-kong-faiss.ts 
 > https://github.com/RealKai42/langchainjs-juejin/blob/main/node/load-kong-faiss.ts
 
-因为对数据生成 embedding 需要一定的花费，所以我们希望把 embedding 的结果持久化，这样可以在应用中持续复用。因为 js 并不是一个面向后端和机器学习相关的语言，所以原生的 vector store 并不多，大多数还是以支持 python 为主。目前也有像 [lanceDB](https://lancedb.com/) 原生支持 js 的，但毕竟是少数。  
+因为对数据生成 embedding 需要一定的花费，所以我们希望把 embedding 的结果持久化，这样可以在应用中持续复用。因为 ==**js 并不是一个面向后端和机器学习相关的语言**==，所以原生的 vector store 并不多，大多数还是以支持 python 为主。目前也有像 [lanceDB](https://lancedb.com/) 原生支持 js 的，但毕竟是少数。  
 
-就工程而言，应该是不同的语言和框架去做自己擅长的事，js 是一个面向应用和用户的语言，而并不擅长去做数据库相关的处理。 所以在实际工程中，js 是对接的是由其他语言管理的向量数据库，或者直接对接云数据库，来将复杂度隔离，让 js 侧更多关注在应用和业务相关逻辑上。 
+==**就工程而言，应该是不同的语言和框架去做自己擅长的事**==，js 是一个面向应用和用户的语言，而并不擅长去做数据库相关的处理。 所以==*在实际工程中，js 对接的是由其他语言管理的向量数据库*==，或者直接对接云数据库，来将复杂度隔离，让 js 侧更多关注在应用和业务相关逻辑上。 
 
-所以，这一节，我们将使用由 facebook 开源的 [faiss](https://github.com/facebookresearch/faiss) 向量数据库，目前有 27.7k star，是向量数据库中非常流行的开源解决方案。选择这个的原因是其可以将向量数据库导出成文件，并且提供了 python 和 nodejs 的处理方式。   
+所以，这一节，我们将使用由 facebook 开源的 [faiss](https://github.com/facebookresearch/faiss) 向量数据库，目前有 27.7k star，是向量数据库中非常流行的开源解决方案。选择这个的原因是其==可以将向量数据库导出成文件==，并且提供了 python 和 nodejs 的处理方式。   
 
-在开发时，我们既可以用 js 进行 embedding 和持久化存储，并后续使用 js 读取已经持久化的向量数据库进行使用。也可以使用 python 进行 embedding 并持久化存储成文件，然后使用 js 进行读取和使用。如果未来对可靠性需求变大，也可以非常容易地将其数据库内容导出到其他数据库或者云数据库。这给我们足够的灵活性。  
+在开发时，我们既可以用 js 进行 embedding 和持久化存储，且后续使可以通过 js 读取已经持久化的向量数据库来供我们使用；也可以使用 python 进行 embedding 并持久化存储成文件，然后使用 js 进行读取和使用。如果未来对可靠性需求变大，也可以非常容易地将其数据库内容导出到其他数据库或者云数据库。这给我们足够的灵活性。  
 
 目前 Deno 和 faiss-node 有一些兼容性问题，所以我们暂时切换到正常的 node 来实现这部分。虽然 Deno 是希望实现跟 node 的兼容性，但在一些小的细节上还是会有坑，不过我们只是借助 Deno 提供的 Jupyter NoteBook kernel 来实现学习时节约时间和 token 花费的目的，遇到 Deno 的坑直接切回 nodejs 就行。其实这两者大部分 API 是通用的，只要修改一下加载环境变量部分的代码就行。  
 
-在工程落地时，我也建议是先用 Jupyter NoteBook 去做测试和开发，落地时还是用更加成熟的 nodejs。所以下面的代码是在 nodejs 中运行，具体的 package.json 等配置可以见源代码。  
+在工程进行时，我也建议是先用 Jupyter NoteBook 去做测试和开发，落地时还是用更加成熟的 nodejs。所以下面的代码是在 nodejs 中运行，具体的 package.json 等配置可以见源代码。  
 
 创建一个正常的 nodejs 项目，然后安装依赖
 
 ```
 yarn add dotenv faiss-node langchain 
 ```
-
 
 ```js
 const run = async () => {
@@ -248,24 +242,22 @@ const res = await retriever.invoke("茴香豆是做什么用的");
 ```
 
 结果跟我们使用 `MemoryVectorStore` 创建的 vector store 的返回值是一样的。  
-
-
 ## 小结
+---
+==**Vector store 是 RAG 和 LLM App 非常核心的内容**==，所以希望大家能够跟着写一下代码、配一下环境跟着玩一下，在构建好的 vector store 上用 retriever 用不同的方式去提问一下，根据结果感受一下 vector store 相似性搜索的原理。  
 
-Vector store 是 RAG 和 LLM App 非常核心的内容，所以希望大家能够跟着写一下代码、配一下环境跟着玩一下，在构建好的 vector store 上用 retriever 用不同的方式去提问一下，根据结果感受一下 vector store 相似性搜索的原理。  
-
-我相信购买这节课的大多数前端或者应用侧的程序员，我们并不需要了解 llm 特别深层次的原理，但要对 embedding 和 相似性搜索有定性的感受，大概理解他的原理和应用效果。  
+我相信购买这节课的大多数前端或者应用侧的程序员，我们并不需要了解 llm 特别深层次的原理，但要==**对 embedding 和 相似性搜索有定性的感受**==，大概理解他的原理和应用效果。  
 
 例如，最近比较火的 prompt engineering 听起来很像玄学，有一些写 prompt 的方式就是能够激发 llm 产出更高质量的结果，有一些则不能。通过跟 retriever 进行交互，你可以试试不同的提问方式返回的结果的质量，你会发现合适的关键词和关键字就能够让 retriever 提取出跟你提问相关性最高的内容，虽然 llm 跟 retriever 的逻辑并不相同，但跟 llm 交互的定性原理是差不多的，你需要在 prompt 中使用合适的关键词，让 llm 能够“召回” 到跟你提问最相关的资料，例如这两句的效果：  
 “帮我实现一个 react 的 右键菜单”  
 和  
 “帮我用 react18、hooks、typescript 实现一个 右键菜单”  
 
-llm 能够返回的质量是完全不一样的，这就是 prompt engineering 的底层逻辑，通过重要的关键词激发 llm 找到对应的知识，这些定性的感受都可以从你把玩 retriever 中获得一些理解。所以说，看各种分享的文章不如直接深入到底层去玩玩试试。你也可以换成私人文档、代码文档等数据源，试试 retriever 的效果。  
+llm 能够返回的质量是完全不一样的，这就是 prompt engineering 的底层逻辑，==**通过重要的关键词激发 llm 找到对应的知识**==，这些定性的感受都可以从你把玩 retriever 中获得一些理解。所以说，看各种分享的文章不如直接深入到底层去玩玩试试。你也可以换成私人文档、代码文档等数据源，试试 retriever 的效果。  
 
 回到 vector store 的选择上，现在海量的各种号称最强的向量数据库让大家挑花了眼，这里我建议，不要陷入过早优化的陷阱，发展的问题可以随着发展来解决。 你看到上面我们用的 `MemoryVectorStore` 和 Faiss 对同样的结果是完全一样的，对于小规模应用，不同的向量数据库效果大差不差，即使之后遇到问题，也非常容易将数据迁移到另一个向量数据库。所以没必要在这纠结太多，哪个火、哪个方便，直接用哪个就行。  
 
-js 确实不是面向数据库这种场景非常合适的语言，所以也不用过分纠结要不用 python 去做向量数据库的构建。但大家看了我们构建向量数据库的代码是非常简单的，先用 js + faiss 即可，当你遇到 js 解决不了的问题，你的理解其实也达到了足够的地步再切换到 python 即可，langchain 的 js/py 的 API 是非常相似的，切换起来非常容易。 
+js 确实不是面向数据库这种场景非常合适的语言，所以也不用过分纠结要不用 python 去做向量数据库的构建。但大家看了我们构建向量数据库的代码是非常简单的，先用 js + faiss 即可，===**当你遇到 js 解决不了的问题，你的理解其实也达到了足够的地步再切换到 python 即可**===，langchain 的 js/py 的 API 是非常相似的，切换起来非常容易。 
 
 至于什么时候用本地的 faiss，什么时候用云向量数据库，我的建议跟上面类似，发展前期不要把自己暴露在太大的复杂度面前，先用本地的 faiss，当其性能或者维护成本过大时，再进行迁移。  
 
