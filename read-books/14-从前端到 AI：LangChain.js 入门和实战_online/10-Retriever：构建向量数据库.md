@@ -94,7 +94,7 @@ const vectorstore = new MemoryVectorStore(embeddings);
 await vectorstore.addDocuments(splitDocs);
 ```
 
-然后我们创建一个 `retriever`，这也是可以直接从 vector store 的实例中自动生成，这里我们传入了参数 2，代表对应每个输入，我们想要返回相似度最高的两个文本内容
+然后我们创建一个 `retriever`，这也是可以直接从 vector store 的实例中自动生成，这里我们==**传入了参数 2，代表对应每个输入，我们想要返回相似度最高的两个文本内容**==
 
 ```js
 const retriever = vectorstore.asRetriever(2)

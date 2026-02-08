@@ -41,12 +41,8 @@ const answer = await retrievalChain.invoke({
 原文中，量子玫瑰相关的是作者在亲眼目睹球状闪电后，向妻子描述蓝色的玫瑰，妻子无法看到并开始质疑其存在，而后孩子也提到了看不见的蓝色玫瑰。之后，妻子闻到了玫瑰花香，虽然一度消失，但作者坚称蓝色玫瑰的存在。最后，作者希望在生命的尽头能再次看到量子玫瑰。
 ```
 活动好筋骨，让我们 Rock & Roll ！
-
-  
-
-
 ## 加载和切割原始数据
-
+---
 这里我们收集球状闪电的原文数据，我这里使用的是 txt 格式的数据。
 
 注意，因为版权原因，此数据集只能用于本地测试，如果要对外服务需要得到版权相关的授权才可以。在我们提供大模型相关服务时，经常会涉及到文字和数据源版权问题，需要大家格外注意，当然为了学习的本地测试是没问题的。
@@ -59,9 +55,6 @@ import { TextLoader } from "langchain/document_loaders/fs/text";
 const loader = new TextLoader("data/qiu.txt");
 const docs = await loader.load();
 ```
-
-  
-
 
 我们看一下加载出来的数据结构
 
@@ -78,8 +71,6 @@ const docs = await loader.load();
   }
 ]
 ```
-
-  
 
 
 可以看到，加载出来是一个非常巨大的Document 对象，这显然超出大部分 LLM 的上下文限制，所以我们需要对原文进行切分
@@ -106,12 +97,12 @@ Document {
   metadata: { source: "data/qiu.txt", loc: { lines: { from: 35, to: 42 } } }
 }
 ```
+
 可以看到，pageContent 是切分后的文本结果，在 metadata 中存储了关于切分的原始信息，方便后续处理
 
-这里我们使用 `RecursiveCharacterTextSplitter`，这是最常用的切分工具，他根据内置的一些字符对原始文本进行递归的切分，来保持相关的文本片段相邻，保持切分结果内部的语意相关性。
+这里我们使用 `RecursiveCharacterTextSplitter`，这是最常用的切分工具，他==**根据内置的一些字符对原始文本进行递归的切分，来保持相关的文本片段相邻，保持切分结果内部的语意相关性**==。
 
 Langchain 内置了适用于不同场景的切分工具函数，一般来说，在初期可以直接使用 `RecursiveCharacterTextSplitter`，这是比较通用的切分函数，可以在完整实现所有 Chain 之后，再去看切分函数是否影响了最终的质量，来决定是调整切分的参数，还是选择其他切分工具。  
-
 
 我们看一下切割的结果
 
@@ -147,7 +138,7 @@ console.log(splitDocs[5].pageContent)
 可以看到，切分结果基本每个块内部都是在讲大概一个事情，块之间也有一定的重合来让 LLM 能够理解上下文。
 
 ## 构建 vector store 和 retriever
-
+---
 有了切割后的数据后，我们需要将每个数据块构建成 vector，然后存出来 vector store 中，这里我们使用 OpenAI 的 text-embedding-ada-002 模型。
 
 我们先创建一个 embedding 对象，得益于 langchain 的自由性，我们可以在这里使用任何 embedding 模型，包括一些自部署的开源 embedding 模型来节约成本。为了方便起见，我们使用 openai 提供的模型
@@ -172,14 +163,12 @@ await vectorstore.addDocuments(splitDocs);
 
 这部分代码会运行比较久，需要对数据块中每一个数据调用 embedding 模型并存储在内存的 store 中。
 然后，我们就可以从 vectorstore 获取到一个 retriever 实例
+
 ```ts
 const retriever = vectorstore.asRetriever(2)
 ```
 
 这里我们传入参数 2，指每次获取 vector store 中最相关的两条数据。默认返回的数据是根据 similarity 进行排序的，也就是跟用户问题最相关的两条数据。一般不需要设置的特别大，要不给 LLM 的内容太多，费用会变大。
-
-  
-
 
 然后，我们就可以测试一下输入一个提问，看看获取到结果的质量
 
@@ -254,7 +243,7 @@ console.log(result)
 可以看到，我们已经能够根据用户的问题，来获取到原文中相关性比较高的上下文，并处理成纯文字形式
 
 ## 构建 Template
-
+---
 然后，我们就可以构建用户提问的 template，这里我们使用 ChatPromptTemplate 来构建我们的 prompt，使用简单的 prompt 技巧，并在其中定义两个变量 context 和 question
 
 ```ts
@@ -279,13 +268,13 @@ const prompt = ChatPromptTemplate.fromTemplate(
 
 在设计 prompt，我们使用一些简单的 prompt engineering 的技巧，比如：
 
-- 并且回答时仅根据原文
+- ==**并且回答时仅根据原文**==
   - 这里固定 LLM 回答的范围只能根据原文内容
+  
 - 如果原文中没有相关内容，你可以回答“原文中没有相关内容”
   - 这里来减少 LLM 回答时候的幻想问题
-
 ## 实现完整的 Chain
-
+---
 然后，我们就可以把上述所有内容连在一起，来实现完整的对话 Chain
 
 首先，我们定义 LLM 模型，这里依旧是使用 OpenAI 的模型
@@ -337,12 +326,8 @@ console.log(answer);
 原文中描述了直升机试验的场景。在试验中，改进过的探杆防御系统被安装在一架直升机上。直升机编队起飞后，电弧在空中出现，当雷球熄灭时，探杆将自动弹出，牵引着一根直径不到半厘米的超导线接触目标位置。整个试验过程中，两架直升机成功地飞行并降落，展现出探杆防御系统的功能。
 ```
 
-  
-
-
 ## 小结
-
-通过将我们之前学到的知识连到一起，我们就有了基于任意私域数据库来构建 rag chatbot 的能力，这可以方便我们把 LLM 应用到任意公司内已有的数据集中，构建私域数据的对话机器人。这在应用中的想象力是无穷的，例如你可以把你自己学习笔记存储到 vector store 中，来构建专属于自己的对话机器人，基于自己学过的知识来回答问题。
-
+---
+通过将我们之前学到的知识连到一起，我们就有了==**基于任意私域数据库来构建 rag chatbot 的能力**==，这可以方便我们把 LLM 应用到任意公司内已有的数据集中，构建私域数据的对话机器人。这在应用中的想象力是无穷的，例如你可以把你自己学习笔记存储到 vector store 中，来构建专属于自己的对话机器人，基于自己学过的知识来回答问题。
 
 当然，现在我们的 chatbot 还是没有历史对话的数据，接下来我们将学习 langchain 中的 Memory 类，让 chat bot 拥有记忆能力。
