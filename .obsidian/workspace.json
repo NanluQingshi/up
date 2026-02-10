@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/15-Memory：实现自定义 Memory 存储.md",
+                "file": "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/16-RAG：增强 RAG 能力并部署成 API.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "15-Memory：实现自定义 Memory 存储"
+              "title": "16-RAG：增强 RAG 能力并部署成 API"
             }
           }
         ],
@@ -157,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/15-Memory：实现自定义 Memory 存储.md",
+                "file": "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/16-RAG：增强 RAG 能力并部署成 API.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "15-Memory：实现自定义 Memory 存储 的大纲"
+              "title": "16-RAG：增强 RAG 能力并部署成 API 的大纲"
             }
           }
         ],
@@ -185,6 +185,9 @@
   },
   "active": "f0bafaa59ca6c684",
   "lastOpenFiles": [
+    "未命名.md",
+    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/16-RAG：增强 RAG 能力并部署成 API.md",
+    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/15-Memory：实现自定义 Memory 存储.md",
     "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/14-Memory：深入 Memory 运行机制.md",
     "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/13-Memory：让 Chatbot 拥有记忆能力.md",
     "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/1-开篇：大模型时代，如何跟上节奏？.md",
@@ -209,11 +212,8 @@
     "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/20-Agent：迈出 AGI 第一步，基础 Agent 实现和解析.md",
     "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/19-Agent：agent 基础.md",
     "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/18-Function Calling：使用 LLM 进行数据标注和信息提取.md",
-    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/16-RAG：增强 RAG 能力并部署成 API.md",
     "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/17-Function Calling：使用 LLM 去调用外界 API.md",
-    "read-books/14-从前端到 AI：LangChain.js 入门和实战_online/15-Memory：实现自定义 Memory 存储.md",
     "read-books/14-从前端到 AI：LangChain.js 入门和实战_online",
-    "README.md",
     "read-books/从前端到 AI：LangChain.js 入门和实战_online",
     "从前端到 AI：LangChain.js 入门和实战_online",
     "Pasted image 20250830160557.png",
