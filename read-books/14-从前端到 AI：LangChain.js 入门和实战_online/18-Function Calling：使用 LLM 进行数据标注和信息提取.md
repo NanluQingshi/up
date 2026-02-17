@@ -1,18 +1,15 @@
 > 本章对应源代码：https://github.com/RealKai42/langchainjs-juejin/blob/main/lc-tools.ipynb
 
-上一节中，我们学习了如何直接使用 openAI 的原生 API 去使用 function calling （tools）功能，需要自己维护历史、写参数类型并且自己实现函数的调用，确实比较繁琐。这一节，我们将学习在 langchain 中如何使用该功能，会极大的减缓使用门槛，并且很容易集成到现有 chain 中。  
+上一节中，我们学习了如何直接使用 openAI 的原生 API 去使用 function calling （tools）功能，==**需要自己维护历史、写参数类型并且自己实现函数的调用，确实比较繁琐。**==这一节，我们将学习在 langchain 中如何使用该功能，会极大的减缓使用门槛，并且很容易集成到现有 chain 中。  
 
 同时，我们会讲解几个使用 tools 对数据进行打标签、信息提取等常见的操作
-
-
 ## 在 langchain 中使用 tools
-
+---
 在 langchain 中，我们一般会使用 zod 来定义 tool 函数的 JSON schema，我们可以专注在参数的描述上，参数的类型定义和是否 required 都可以有 zod 来生成。 并且在后续定义 Agent tool 时，zod 也能进行辅助的参数类型检测。  
 
 zod 是 js 生态中常见的类型定义和验证的工具库，我们这里用一些例子简单带大家快速入门一下:
 
 首先是简单的使用，我们订一个 string 类型的 schema:
-
 
 ```js
 import { z } from "zod";
@@ -81,6 +78,7 @@ const getCurrentWeatherSchema = z.object({
   unit: z.enum(["celsius", "fahrenheit"]).describe("The unit of temperature"),
 });
 ```
+
 这里我们定义了两个参数：
 - location 是 string 类型，并且添加描述
 - unit 是枚举类型，并添加相应的描述
@@ -137,6 +135,7 @@ const modelWithTools = model.bind({
 
 await modelWithTools.invoke("北京的天气怎么样");
 ```
+
 这里就会返回一个 AIMessage 信息，并携带着跟 tool call 有关的信息：
 
 ```js
@@ -201,7 +200,7 @@ await chain.invoke({
 ```
 
 ### 多 tools model
-
+---
 同样的，我们也可以在 model 中去绑定多个 tools，就像直接使用 openai 的 API 类似：
 
 ```js
@@ -216,7 +215,6 @@ zodToJsonSchema(getCurrentTimeSchema)
 ```
 
 注意，这里我们对参数使用了 optional 工具函数，就输出的 json scheme 中就不会将这个参数标志为 required
-
 
 ```js
 {
@@ -261,9 +259,8 @@ const modelWithMultiTools = model.bind({
     ]
 })
 ```
-
 ### 控制 model 对 tools 的调用
-
+---
 我们也可以像使用 API 一样通过 `tool_choice` 去控制 llm 调用函数的行为：
 
 ```js
@@ -291,9 +288,8 @@ const modelWithForce = model.bind({
 })
 ```
 
-
 ## 使用 tools 给数据打标签
-
+---
 在数据预处理时，给数据打标签是非常常见的操作。例如之前我们会使用 jieba 这个 python 库对评论进情感打分，找出评论中含有恶意的部分。  
 
 而有了大模型后，跟自然语言相关的绝大部分任务都可以使用 llm 来代替，而且得益于 llm 展现出来非常强大的跨语言理解能力，我们的工具可以是针对任何语言，也可以让 llm 去分辨使用的是什么语言。这些任务在 llm 之前都需要非常复杂的实现才能达到的。  
@@ -383,13 +379,12 @@ await chain.invoke({
 
 在这里展现的就是 llm zero-shot learning 的能力，即对于新任务只需要 prompt 的描述，甚至不需要给出任务实例 或者使用一部分数据进行训练，即可以完成任务。  
 
-
 ## 使用 tools 进行信息提取
-
+---
 我们再看 tools 另一个常见的应用，信息的提取。信息提取和打标记类似，如果从学术角度可能有一些区别，但在我们实际工程上没必要做太大的区分。感受上就是打标签是给数据打上给定的一些标记，而信息提取是 llm 理解原始文本后提取其中的信息，类似于我们常用的粘贴快递地址，就自动提取姓名、手机和地址一样。  
 在信息提取时，一般是会提取多个信息，类似于一段文本中涉及到多个对象的内容，一次性都提取出来。  
 
-让我们先定描述一个人的信息 scheme：
+让我们先定义描述一个人的信息 scheme：
 
 ```js
 const personExtractionSchema = z.object({
@@ -408,6 +403,7 @@ const relationExtractSchema = z.object({
     relation: z.string().describe("人之间的关系, 尽量简洁")
 })
 ```
+
 这里我们复用 `personExtractionSchema` 去构建数组的 scheme，去提取信息中多人的信息，并且提取文本中人物之间的关系。  
 
 得益于 llm 良好的语言能力，我们只需要有简单的 prompt 就让 llm 在信息提取任务上有很好的表现。我们看一下这个复杂的 scheme 转换后的结果：
@@ -499,6 +495,7 @@ await chain.invoke({
   }
 ]
 ```
+
 这里数据中并没有小丽的年龄，所以 llm 直接留空，并没有强行提取信息。  
 
 因为 llm 是根据自己对语言的理解能力，而不是根据传统的匹配规则等，所以在语意中隐含的信息也有良好的提取能力：
@@ -535,7 +532,6 @@ await chain.invoke({
 ```
 
 
-
 ```js
 [
   {
@@ -546,23 +542,5 @@ await chain.invoke({
 ```
 
 ## 小结
-
+---
 这一节我们学习了如何在 langchain 中使用 openAI tools，通过 zod 减少了我们编写 schema 的繁琐。更重要的，我们学习了如何使用 tools 对数据进行打标签和数据提取，这意味着 llm 并不只是一个 chat bot 的用处，我们可以把他融入在日常的很多数据处理任务中，替代传统很多需要复杂编码才能解决的问题。  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
